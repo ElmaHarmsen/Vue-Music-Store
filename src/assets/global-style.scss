@@ -1,0 +1,18 @@
+//colors
+$throbbing-dark-color: #280904;
+$merlit-purple-color: #680e34;
+$defenders-red-color: #9a151a;
+$flower-lightred-color: #c21b12;
+$bicycle-orange-color: #fc4b2a;
+
+//fonts
+@font-face {
+    font-family: "dancing-script";
+    src: url('/assets/DancingScript-Regular.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: "segoe-ui";
+    src: url('/assets/Segoe-UI.ttf');
+    font-display: swap;
+}
