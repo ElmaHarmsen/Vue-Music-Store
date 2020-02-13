@@ -1,7 +1,10 @@
 <template>
   <section>
+    <img v-bind:src="single.imageUrl" alt="" />
     <ul>
-      <li>{{ info_block.item }}</li>
+      <li>{{ single.title }}</li>
+      <li>{{ single.artist }}</li>
+      <li>{{ single.releaseDate }}</li>
     </ul>
   </section>
 </template>
@@ -9,19 +12,24 @@
 <script>
 export default {
   name: "MusicItem",
-  props: ["info_block"]
+  props: ["single"]
 };
 </script>
 
 <style lang="scss" scoped>
-ul {
-  list-style: none;
-  text-align: left;
+section {
+  background-color: $throbbing-dark-color;
+  padding: 20px;
 
-  li {
-    font-family: "segoe-ui";
-    color: $defenders-red-color;
-    font-size: 18px;
+  ul {
+    list-style: none;
+    text-align: left;
+
+    li {
+      font-family: "segoe-ui";
+      color: $defenders-red-color;
+      font-size: 18px;
+    }
   }
 }
 </style>

@@ -4,19 +4,13 @@
 
     <HelloWorld />
 
-    <MusicItemWrapper>
+    <div class="music-item-wrapper">
       <MusicItem
-        v-for="item in info_1"
-        v-bind:key="item.id"
-        v-bind:info_block="item"
+        v-for="listitem in info_1"
+        v-bind:key="listitem.id"
+        v-bind:single="listitem"
       ></MusicItem>
-
-      <MusicItem
-        v-for="item in info_2"
-        v-bind:key="item.id"
-        v-bind:info_block="item"
-      ></MusicItem>
-    </MusicItemWrapper>
+    </div>
   </div>
 </template>
 
@@ -24,7 +18,6 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import NavBar from "./components/NavBar.vue";
 import MusicItem from "./components/MusicItem.vue";
-import MusicItemWrapper from "./components/MusicItemWrapper.vue";
 
 export default {
   name: "App",
@@ -34,44 +27,57 @@ export default {
       //always a function with a return
 
       info_1: [
-        { id: 0, item: "Bohemian Rhapsody" },
-        { id: 1, item: "Queen" },
-        { id: 2, item: "October 31, 1975" }
-      ],
-
-      info_2: [
-        { id: 0, item: "Hotel California, Live on MTV" },
-        { id: 1, item: "Eagles" },
-        { id: 2, item: "1994" }
+        {
+          id: 0,
+          title: "Bohemian Rhapsody",
+          artist: "Queen",
+          releaseDate: "October 31, 1975",
+          imageUrl: require("./assets/bohemian-rhapsody.png")
+        },
+        {
+          id: 1,
+          title: "Hotel California",
+          artist: "Eagles",
+          releaseDate: "1094",
+          imageUrl: require("./assets/logo.png")
+        }
       ]
     };
   },
   components: {
     HelloWorld,
     NavBar,
-    MusicItem,
-    MusicItemWrapper
+    MusicItem
   },
   created: function() {
     //always a function
     setInterval(() => {
       this.smth = Math.random();
     }, 1000);
-  },
-  watch: {
-    smth: function(theNewValue, theValueItWasBefore) {
-      console.log(
-        `The old value was: ${theValueItWasBefore}, the new one is ${theNewValue}`
-      );
-    }
   }
+  // watch: {
+  //   smth: function(theNewValue, theValueItWasBefore) {
+  //     console.log(
+  //       `The old value was: ${theValueItWasBefore}, the new one is ${theNewValue}`
+  //     );
+  //   }
+  // }
 };
 </script>
 
 <style lang="scss">
 #app {
   text-align: center;
+
+  .music-item-wrapper {
+    display: flex;
+    flex-flow: row;
+    flex-basis: 33%;
+    justify-content: space-evenly;
+    margin: 0px 50px;
+  }
 }
+
 body {
   margin: 0px;
 }

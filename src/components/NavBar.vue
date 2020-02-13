@@ -2,9 +2,10 @@
   <section>
     <h2>Name</h2>
     <div>
-      <p>Item One</p>
-      <p>Item Two</p>
-      <p>Item Three</p>
+      <p>Artists</p>
+      <p>Music CD's</p>
+      <p>Stories</p>
+      <p>Instruments</p>
     </div>
   </section>
 </template>
@@ -23,6 +24,8 @@ section {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 8px 6px -6px $throbbing-dark-color;
   background-image: linear-gradient(
     to right,
     $throbbing-dark-color,

@@ -22,7 +22,7 @@ header {
   h1 {
     font-family: "dancing-script";
     color: $merlit-purple-color;
-    font-size: 60px;
+    font-size: 65px;
     margin: 60px 0px 30px 0px;
   }
   p {
