@@ -1,12 +1,9 @@
 <template>
   <section>
-    <h3>
-      {{ msg }}
-    </h3>
-    <article>
-      <h3>Formidable Music Store</h3>
+    <header>
+      <h1>Formidable Music Store</h1>
       <p>This is my first Vue project</p>
-    </article>
+    </header>
   </section>
 </template>
 
@@ -21,13 +18,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-article {
-  h3 {
+header {
+  h1 {
     font-family: "dancing-script";
     color: $merlit-purple-color;
+    font-size: 60px;
+    margin: 60px 0px 30px 0px;
   }
   p {
-    font-family: "segou-ui";
     color: $throbbing-dark-color;
   }
 }
