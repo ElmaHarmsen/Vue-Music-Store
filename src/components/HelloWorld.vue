@@ -2,7 +2,6 @@
   <section>
     <header>
       <h1>Formidable Music Store</h1>
-      <p>This is my first Vue project</p>
     </header>
   </section>
 </template>
@@ -23,7 +22,7 @@ header {
     font-family: "dancing-script";
     color: $merlit-purple-color;
     font-size: 65px;
-    margin: 60px 0px 30px 0px;
+    margin: 300px 0px 500px 0px;
   }
   p {
     color: $throbbing-dark-color;

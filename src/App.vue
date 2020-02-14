@@ -6,7 +6,7 @@
 
     <div class="music-item-wrapper">
       <MusicItem
-        v-for="listitem in info_1"
+        v-for="listitem in info"
         v-bind:key="listitem.id"
         v-bind:single="listitem"
       ></MusicItem>
@@ -26,12 +26,12 @@ export default {
       smth: 0,
       //always a function with a return
 
-      info_1: [
+      info: [
         {
           id: 0,
           title: "Bohemian Rhapsody",
           artist: "Queen",
-          releaseDate: "October 31, 1975",
+          releaseDate: "1975",
           imageUrl: require("./assets/bohemian-rhapsody.png")
         },
         {
@@ -39,7 +39,28 @@ export default {
           title: "Hotel California",
           artist: "Eagles",
           releaseDate: "1094",
-          imageUrl: require("./assets/logo.png")
+          imageUrl: require("./assets/hotel-california.png")
+        },
+        {
+          id: 2,
+          title: "November Rain",
+          artist: "Guns N' Roses",
+          releaseDate: "1987",
+          imageUrl: require("./assets/november-rain.jpg")
+        },
+        {
+          id: 3,
+          title: "Boulevard of Broken Dreams",
+          artist: "Green Day",
+          releaseDate: "2004",
+          imageUrl: require("./assets/boulevard-broken-dreams.jpeg")
+        },
+        {
+          id: 4,
+          title: "Boulevard of Broken Dreams",
+          artist: "Green Day",
+          releaseDate: "2004",
+          imageUrl: require("./assets/boulevard-broken-dreams.jpeg")
         }
       ]
     };
@@ -71,10 +92,11 @@ export default {
 
   .music-item-wrapper {
     display: flex;
-    flex-flow: row;
-    flex-basis: 33%;
-    justify-content: space-evenly;
-    margin: 0px 50px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: auto auto;
+    width: 75%;
+    flex-basis: 25%;
   }
 }
 
