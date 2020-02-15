@@ -4,6 +4,8 @@
 
     <HelloWorld />
 
+    <ConsistentButton />
+
     <div class="music-item-wrapper">
       <MusicItem
         v-for="listitem in info"
@@ -18,6 +20,7 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import NavBar from "./components/NavBar.vue";
 import MusicItem from "./components/MusicItem.vue";
+import ConsistentButton from "./components/ConsistentButton.vue";
 
 export default {
   name: "App",
@@ -62,13 +65,29 @@ export default {
           releaseDate: "2004",
           imageUrl: require("./assets/boulevard-broken-dreams.jpeg")
         }
+      ],
+
+      consistentButton: [
+        {
+          id: 1,
+          content: "Browse CD's"
+        },
+        {
+          id: 2,
+          content: "Browse LP's"
+        },
+        {
+          id: 3,
+          content: "Browse Artists"
+        }
       ]
     };
   },
   components: {
     HelloWorld,
     NavBar,
-    MusicItem
+    MusicItem,
+    ConsistentButton
   },
   created: function() {
     //always a function
@@ -89,6 +108,8 @@ export default {
 <style lang="scss">
 #app {
   text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
 
   .music-item-wrapper {
     display: flex;

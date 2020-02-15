@@ -2,10 +2,9 @@
   <section>
     <h2>Name</h2>
     <div>
+      <p>CD's</p>
+      <p>LP's</p>
       <p>Artists</p>
-      <p>Music CD's</p>
-      <p>Stories</p>
-      <p>Instruments</p>
     </div>
   </section>
 </template>
@@ -18,9 +17,13 @@ export default {
 
 <style lang="scss" scoped>
 section {
+  position: fixed;
+  top: 0px;
+  z-index: 3;
   height: 70px;
   width: 75%;
-  margin: 0 auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
