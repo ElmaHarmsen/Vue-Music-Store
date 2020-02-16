@@ -29,7 +29,7 @@ section {
   flex-flow: column;
   border-radius: 10px;
   box-shadow: 0 8px 6px -6px $throbbing-dark-color;
-  margin: 0px 0px 50px 0px;
+  margin: 50px 0px 50px 0px;
 
   img {
     height: 250px;

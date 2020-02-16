@@ -4,7 +4,13 @@
 
     <HelloWorld />
 
-    <ConsistentButton />
+    <div class="consistent-item-wrapper">
+      <ConsistentButton
+        v-for="btnitem in consistentButton"
+        v-bind:key="btnitem.id"
+        v-bind:btnContent="btnitem"
+      ></ConsistentButton>
+    </div>
 
     <div class="music-item-wrapper">
       <MusicItem
@@ -70,15 +76,15 @@ export default {
       consistentButton: [
         {
           id: 1,
-          content: "Browse CD's"
+          content: "CD's"
         },
         {
           id: 2,
-          content: "Browse LP's"
+          content: "LP's"
         },
         {
           id: 3,
-          content: "Browse Artists"
+          content: "Artists"
         }
       ]
     };
@@ -118,6 +124,13 @@ export default {
     margin: auto auto;
     width: 75%;
     flex-basis: 25%;
+  }
+
+  .consistent-item-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: auto auto;
   }
 }
 

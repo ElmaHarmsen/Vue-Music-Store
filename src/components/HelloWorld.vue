@@ -51,6 +51,7 @@ export default {
 section {
   // background: radial-gradient( #222, #000);
   background: radial-gradient(closest-side, #756c1b, #0e99b5, #022d36);
+  border-bottom: 5px solid $merlit-purple-color;
   height: 100vh;
   display: flex;
   flex-flow: column nowrap;

@@ -1,10 +1,15 @@
 <template>
   <section>
     <h2>Name</h2>
-    <div>
+    <!-- <div>
       <p>CD's</p>
       <p>LP's</p>
       <p>Artists</p>
+    </div> -->
+    <div>
+      <i class="material-icons">
+        shopping_cart
+      </i>
     </div>
   </section>
 </template>
@@ -56,6 +61,12 @@ section {
       color: $white-color;
       font-weight: bold;
       padding: 0px 15px;
+    }
+
+    .material-icons {
+      color: $white-color;
+      font-size: 35px;
+      padding: 0px 10px 0px 0px;
     }
   }
 }
