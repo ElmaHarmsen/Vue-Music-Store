@@ -44,7 +44,6 @@ section {
   );
 
   h2 {
-    font-family: "dancing-script";
     color: $white-color;
     font-size: 25px;
     margin: 0px;

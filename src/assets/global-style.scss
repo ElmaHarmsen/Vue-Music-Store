@@ -6,3 +6,26 @@ $flower-lightred-color: #c21b12;
 $bicycle-orange-color: #fc4b2a;
 
 $white-color: #fff;
+$grey-color: #333;
+
+
+body {
+margin: 0px;
+padding: 0px;
+}
+h1 {
+    font-family: "dancing-script";
+    color: $defenders-red-color;
+    font-size: 65px;
+}
+h2 {
+    font-family: "dancing-script";
+}
+p {
+font-family: "segoe-ui";
+font-size: 18px;
+}
+
+.router-link {
+    text-decoration: none;
+}

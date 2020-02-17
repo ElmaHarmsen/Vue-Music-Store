@@ -1,18 +1,31 @@
 <template>
-  <section>
-    <img v-bind:src="single.imageUrl" alt="" />
-    <ul>
-      <li>{{ single.title }}</li>
-      <li>{{ single.artist }}</li>
-      <li>{{ single.releaseDate }}</li>
-    </ul>
-  </section>
+  <router-link to="/product" class="router-link">
+    <section>
+      <img v-bind:src="single.imageUrl" alt="" />
+      <ul>
+        <li>{{ single.title }}</li>
+        <li>{{ single.artist }}</li>
+        <li>{{ single.releaseDate }}</li>
+        <li>{{ albumLength }}</li>
+      </ul>
+      <p v-if="single.inventory > 3">{{ single.price }}</p>
+      <p v-else-if="single.inventory < 3 && single.inventory > 0" class="stock">
+        Almost sold out!
+      </p>
+      <p v-else class="stock">Out of Stock</p>
+    </section>
+  </router-link>
 </template>
 
 <script>
 export default {
   name: "MusicItem",
-  props: ["single"]
+  props: ["single"],
+  computed: {
+    albumLength: function() {
+      return this.single.songs + " songs," + " " + this.single.duration;
+    }
+  }
 };
 </script>
 
@@ -46,6 +59,15 @@ section {
       color: $white-color;
       font-size: 18px;
     }
+  }
+  p {
+    color: $white-color;
+    font-family: "dancing-script";
+    font-size: 25px;
+    margin: 0;
+  }
+  .stock {
+    color: $grey-color;
   }
 }
 </style>

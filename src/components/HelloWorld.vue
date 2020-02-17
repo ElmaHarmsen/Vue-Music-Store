@@ -58,11 +58,6 @@ section {
   justify-content: center;
 
   header {
-    h1 {
-      font-family: "dancing-script";
-      color: $defenders-red-color;
-      font-size: 65px;
-    }
     p {
       color: $throbbing-dark-color;
     }

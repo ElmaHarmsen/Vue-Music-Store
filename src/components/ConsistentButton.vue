@@ -24,7 +24,7 @@ section {
     flex-flow: column nowrap;
     justify-content: center;
     animation-name: changeColorButton;
-    animation-duration: 1s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
     margin: -200px 25px 0px 25px;
     color: $white-color;
@@ -41,10 +41,10 @@ section {
         border: 5px solid $defenders-red-color;
       }
       50% {
-        border: 5px solid $defenders-red-color;
+        border: 5px solid $bicycle-orange-color;
       }
       100% {
-        border: 5px solid $bicycle-orange-color;
+        border: 5px solid $defenders-red-color;
       }
     }
   }
