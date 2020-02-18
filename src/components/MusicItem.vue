@@ -2,17 +2,29 @@
   <router-link to="/product" class="router-link">
     <section>
       <img v-bind:src="single.imageUrl" alt="" />
-      <ul>
-        <li>{{ single.title }}</li>
-        <li>{{ single.artist }}</li>
-        <li>{{ single.releaseDate }}</li>
-        <li>{{ albumLength }}</li>
-      </ul>
-      <p v-if="single.inventory > 3">{{ single.price }}</p>
-      <p v-else-if="single.inventory < 3 && single.inventory > 0" class="stock">
-        Almost sold out!
-      </p>
-      <p v-else class="stock">Out of Stock</p>
+      <div v-if="single.type === 'cd'">
+        <ul>
+          <li>{{ single.title }}</li>
+          <li>{{ single.artist }}</li>
+          <li>{{ single.releaseDate }}</li>
+          <li>{{ albumLength }}</li>
+        </ul>
+        <p v-if="single.inventory > 3">{{ single.price }}</p>
+        <p
+          v-else-if="single.inventory < 3 && single.inventory > 0"
+          class="stock"
+        >
+          Almost sold out!
+        </p>
+        <p v-else class="stock">Out of Stock</p>
+      </div>
+
+      <div v-if="single.type === 'artist'">
+        <p>{{ single.name }}</p>
+        <ul>
+          <li v-html="popularSongs"></li>
+        </ul>
+      </div>
     </section>
   </router-link>
 </template>
@@ -24,6 +36,15 @@ export default {
   computed: {
     albumLength: function() {
       return this.single.songs + " songs," + " " + this.single.duration;
+    },
+    popularSongs: function() {
+      return `
+        <li>Popular Songs:</li>
+        <li>${this.single.songOne}</li>
+        <li>${this.single.songTwo}</li>
+        <li>${this.single.songThree}</li>
+        `;
+      //in a list
     }
   }
 };

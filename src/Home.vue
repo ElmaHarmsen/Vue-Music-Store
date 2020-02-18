@@ -4,21 +4,15 @@
 
     <HelloWorld />
 
-    <div class="consistent-item-wrapper">
-      <ConsistentButton
-        v-for="btnitem in consistentButton"
-        v-bind:key="btnitem.id"
-        v-bind:btnContent="btnitem"
-      ></ConsistentButton>
-    </div>
-
     <div class="music-item-wrapper">
       <MusicItem
-        v-for="listitem in info"
+        v-for="listitem in musicItems"
         v-bind:key="listitem.id"
         v-bind:single="listitem"
       ></MusicItem>
     </div>
+
+    <PageIndicator v-bind:homePageNumbers="homePageNumber"></PageIndicator>
   </div>
 </template>
 
@@ -26,7 +20,7 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import NavBar from "./components/NavBar.vue";
 import MusicItem from "./components/MusicItem.vue";
-import ConsistentButton from "./components/ConsistentButton.vue";
+import PageIndicator from "./components/PageIndicator.vue";
 
 export default {
   name: "Home",
@@ -35,9 +29,12 @@ export default {
       smth: 0,
       //always a function with a return
 
-      info: [
+      homePageNumber: 1,
+
+      cdInfo: [
         {
           id: 0,
+          type: "cd",
           title: "500 Miles",
           artist: "The Hooters",
           releaseDate: "2004",
@@ -49,6 +46,7 @@ export default {
         },
         {
           id: 1,
+          type: "cd",
           title: "Hell Freezes Over",
           artist: "Eagles",
           releaseDate: "1994",
@@ -60,6 +58,7 @@ export default {
         },
         {
           id: 2,
+          type: "cd",
           title: "The Division Bell",
           artist: "Pink Floyd",
           releaseDate: "1994",
@@ -71,6 +70,7 @@ export default {
         },
         {
           id: 3,
+          type: "cd",
           title: "Return to Forever",
           artist: "Scorpions",
           releaseDate: "2016",
@@ -82,6 +82,7 @@ export default {
         },
         {
           id: 4,
+          type: "cd",
           title: "L.A. Woman",
           artist: "The Doors",
           releaseDate: "1971",
@@ -93,6 +94,7 @@ export default {
         },
         {
           id: 5,
+          type: "cd",
           title: "Eagles",
           artist: "Eagles",
           releaseDate: "1972",
@@ -104,6 +106,7 @@ export default {
         },
         {
           id: 6,
+          type: "cd",
           title: "ABBA Gold",
           artist: "ABBA",
           releaseDate: "2008",
@@ -115,6 +118,7 @@ export default {
         },
         {
           id: 7,
+          type: "cd",
           title: "Arrival",
           artist: "ABBA",
           releaseDate: "1976",
@@ -123,6 +127,81 @@ export default {
           price: "€6",
           inventory: 6,
           imageUrl: require("./assets/arrival.png")
+        }
+      ],
+
+      artistInfo: [
+        {
+          id: 0,
+          type: "artist",
+          name: "Eagles",
+          songOne: "Hotel California",
+          songTwo: "Take It Easy",
+          songThree: "Life in the Fast Lane",
+          imageUrl: require("./assets/artist-eagles.jpeg")
+        },
+        {
+          id: 1,
+          type: "artist",
+          name: "ABBA",
+          songOne: "Dancing Queen",
+          songTwo: "Gimme! Gimme! Gimme!",
+          songThree: "Mamma Mia",
+          imageUrl: require("./assets/artist-eagles.jpeg")
+        },
+        {
+          id: 2,
+          type: "artist",
+          name: "Scorpions",
+          songOne: "Wind Of Change",
+          songTwo: "Rock You Like A Hurricane",
+          songThree: "Still Loving You",
+          imageUrl: require("./assets/artist-eagles.jpeg")
+        },
+        {
+          id: 3,
+          type: "artist",
+          name: "The Hooters",
+          songOne: "500 Miles",
+          songTwo: "All You Zombies",
+          songThree: "Johhny B.",
+          imageUrl: require("./assets/artist-eagles.jpeg")
+        },
+        {
+          id: 4,
+          type: "artist",
+          name: "Pink Floyd",
+          songOne: "Another Brick in the Wall, Pt.2",
+          songTwo: "Wish You Were Here",
+          songThree: "Comfortably Numb",
+          imageUrl: require("./assets/artist-eagles.jpeg")
+        },
+        {
+          id: 5,
+          type: "artist",
+          name: "The Doors",
+          songOne: "Riders on the Storm",
+          songTwo: "Light My Fire",
+          songThree: "Break on Through(To the Other Side)",
+          imageUrl: require("./assets/artist-eagles.jpeg")
+        },
+        {
+          id: 6,
+          type: "artist",
+          name: "Alter Bridge",
+          songOne: "Metalingus",
+          songTwo: "Watch Over You",
+          songThree: "Blackbird",
+          imageUrl: require("./assets/artist-eagles.jpeg")
+        },
+        {
+          id: 7,
+          type: "artist",
+          name: "Kansas",
+          songOne: "",
+          songTwo: "",
+          songThree: "",
+          imageUrl: require("./assets/artist-eagles.jpeg")
         }
       ],
 
@@ -142,11 +221,26 @@ export default {
       ]
     };
   },
+  computed: {
+    musicItems: function() {
+      let musicItemData = [];
+      switch (this.homePageNumber) {
+        case 1:
+          musicItemData = this.cdInfo;
+          break;
+
+        case 2:
+          musicItemData = this.artistInfo;
+          break;
+      }
+      return musicItemData;
+    }
+  },
   components: {
     HelloWorld,
     NavBar,
     MusicItem,
-    ConsistentButton
+    PageIndicator
   },
   created: function() {
     //always a function
@@ -177,13 +271,6 @@ export default {
     margin: auto auto;
     width: 75%;
     flex-basis: 25%;
-  }
-
-  .consistent-item-wrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin: auto auto;
   }
 }
 </style>
