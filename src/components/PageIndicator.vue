@@ -2,13 +2,17 @@
   <section>
     <span
       class="back"
-      v-on:click="$emit('decreasePage')"
+      v-on:click="$emit('decreasePage', 1)"
       v-if="homePageNumbers > 1"
     >
       <ConsistentButton v-bind:btnContent="buttonBack"></ConsistentButton>
     </span>
 
-    <span class="forward" v-if="homePageNumbers < totalPages">
+    <span
+      class="forward"
+      v-on:click="$emit('increasePage', 1)"
+      v-if="homePageNumbers < totalPages"
+    >
       <ConsistentButton
         v-bind:btnContent="buttonFront"
         v-on:click="increasePage"
@@ -41,8 +45,9 @@ export default {
   },
   methods: {
     increasePage() {
-      this.homePageNumber++;
-    }
+      console.log("clicked");
+    },
+    decreasePage() {}
   }
 };
 </script>

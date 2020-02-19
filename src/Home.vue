@@ -15,6 +15,8 @@
     <PageIndicator
       v-bind:homePageNumbers="homePageNumber"
       v-bind:totalPages="jsonData.length"
+      v-on:increasePage="homePageNumber += $event"
+      v-on:decreasePage="homePageNumber -= $event"
     ></PageIndicator>
   </div>
 </template>
@@ -25,6 +27,8 @@ import NavBar from "./components/NavBar.vue";
 import MusicItem from "./components/MusicItem.vue";
 import PageIndicator from "./components/PageIndicator.vue";
 
+//import json from "./assets/MusicStoreData.json";
+
 export default {
   name: "Home",
   data: function() {
@@ -34,22 +38,31 @@ export default {
 
       homePageNumber: 1,
 
-      consistentButton: [
-        {
-          id: 1,
-          content: "CD's"
-        },
-        {
-          id: 2,
-          content: "LP's"
-        },
-        {
-          id: 3,
-          content: "Artists"
-        }
-      ],
-
+      // consistentButton: [
+      //   {
+      //     id: 1,
+      //     content: "CD's"
+      //   },
+      //   {
+      //     id: 2,
+      //     content: "LP's"
+      //   },
+      //   {
+      //     id: 3,
+      //     content: "Artists"
+      //   }
+      // ],
       jsonData: []
+      //jsonData: json
+
+      /*
+      1. data function returns jsonData which is an array.
+      2. the const rawData gets the json file.
+      3. the array jsonData is set to rawData, now jsonData contains the rawJson.
+      4. a new array, musicItemData, is created.
+      5. the array musicItemData is set to the array jsonData,
+         and is accessed by using this.
+       */
     };
   },
   computed: {
@@ -57,7 +70,6 @@ export default {
       let musicItemData = [];
       switch (this.homePageNumber) {
         case 1:
-          console.log(this.jsonData[0]);
           musicItemData = this.jsonData[0];
           break;
 
