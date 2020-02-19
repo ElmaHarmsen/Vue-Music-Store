@@ -1,10 +1,14 @@
 <template>
   <section>
-    <span v-on:click="$emit('decreasePage')" v-if="homePageNumbers > 1">
+    <span
+      class="back"
+      v-on:click="$emit('decreasePage')"
+      v-if="homePageNumbers > 1"
+    >
       <ConsistentButton v-bind:btnContent="buttonBack"></ConsistentButton>
     </span>
 
-    <span v-if="homePageNumbers < 3">
+    <span class="forward" v-if="homePageNumbers < totalPages">
       <ConsistentButton
         v-bind:btnContent="buttonFront"
         v-on:click="increasePage"
@@ -17,7 +21,7 @@
 import ConsistentButton from "@/components/ConsistentButton.vue";
 export default {
   name: "PageIndicator",
-  props: ["homePageNumbers"],
+  props: ["homePageNumbers", "totalPages"],
   components: {
     ConsistentButton
   },
@@ -51,6 +55,17 @@ section {
   width: 75%;
   margin-left: 50%;
   transform: translateX(-50%);
+
+  span {
+    flex-basis: 100%;
+    display: flex;
+  }
+  span.back {
+    justify-content: flex-start;
+  }
+  span.forward {
+    justify-content: flex-end;
+  }
 
   div {
     margin: 0 0px 50px 0px !important;
