@@ -50,24 +50,14 @@ export default {
 section {
   position: absolute;
   top: 0px;
+  text-align: center;
   z-index: 3;
-  // height: 70px;
   width: 75%;
   margin-left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  // border-radius: 10px;
-  // box-shadow: 0 8px 6px -6px $throbbing-dark-color;
-  // background-image: linear-gradient(
-  //   to right,
-  //   $throbbing-dark-color,
-  //   $merlit-purple-color,
-  //   $defenders-red-color,
-  //   $flower-lightred-color,
-  //   $bicycle-orange-color
-  // );
 
   .consistent-item-wrapper {
     display: flex;

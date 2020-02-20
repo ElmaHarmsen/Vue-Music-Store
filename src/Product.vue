@@ -1,7 +1,8 @@
 <template>
   <section>
-    <NavBar />
-    <div></div>
+    <div class="navbar-wrapper">
+      <NavBar />
+    </div>
   </section>
 </template>
 
@@ -14,3 +15,5 @@ export default {
 };
 import NavBar from "./components/NavBar.vue";
 </script>
+
+<style lang="scss" scoped></style>

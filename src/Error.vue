@@ -15,12 +15,13 @@
         <li>Check if your wifi is still operational</li>
         <li>Reload the browser</li>
         <li>Have you tried turning it of and on again?</li>
+        <li>Or go back to...</li>
       </ul>
-      <h2>What I can do:</h2>
-      <ul>
-        <li>Recommend you watch the IT Crowd</li>
-        <li>It's really funny...!</li>
-      </ul>
+      <router-link to="/" class="router-link">
+        <div class="consistent-button-border">
+          <h2>Home</h2>
+        </div>
+      </router-link>
     </div>
   </section>
 </template>
@@ -52,6 +53,36 @@ section {
       li {
         font-family: "segoe-ui";
         font-size: 25px;
+      }
+    }
+    .consistent-button-border {
+      border-radius: 50%;
+      box-shadow: 0 8px 6px -6px #280904;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      animation-name: changeColorButton;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      margin-top: 50px;
+      margin-bottom: 25px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+    h2 {
+      color: #680e34;
+    }
+    @keyframes changeColorButton {
+      0% {
+        border: 5px solid $defenders-red-color;
+      }
+      50% {
+        border: 5px solid $bicycle-orange-color;
+      }
+      100% {
+        border: 5px solid $defenders-red-color;
       }
     }
   }
