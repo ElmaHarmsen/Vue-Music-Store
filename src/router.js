@@ -16,6 +16,21 @@ export default new VueRouter({
       name: "product",
       component: () => import("@/Product")
     },
+    // {
+    //   path: "/artist",
+    //   name: "artist",
+    //   component: () => import("@/Artist")
+    // },
+    // {
+    //   path: "/shoppingcart",
+    //   name: "shoppingcart",
+    //   component: () => import("@/ShoppingCart")
+    // },
+    {
+      path: "/artist",
+      name: "artist",
+      component: () => import("@/Artist")
+    },
     {
       path: "*",
       name: "error",

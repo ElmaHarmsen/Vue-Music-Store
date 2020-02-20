@@ -9,3 +9,8 @@
     src: url('../assets/Segoe-UI.ttf');
     font-display: swap;
 }
+@font-face {
+    font-family: "neon";
+    src: url('../assets/Clip.ttf');
+    font-display: swap;
+}

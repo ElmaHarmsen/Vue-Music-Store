@@ -44,9 +44,7 @@ export default {
     };
   },
   methods: {
-    increasePage() {
-      console.log("clicked");
-    },
+    increasePage() {},
     decreasePage() {}
   }
 };

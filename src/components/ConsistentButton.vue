@@ -21,7 +21,8 @@ export default {
 <style lang="scss" scoped>
 .consistent-button-border {
   border-radius: 50%;
-  box-shadow: 0 8px 6px -6px $throbbing-dark-color;
+  //box-shadow: 0 8px 6px -6px $throbbing-dark-color;
+  box-shadow: inset 0px 0px 10px #fff, 0px 0px 10px #fff;
   width: 120px;
   height: 120px;
   display: flex;

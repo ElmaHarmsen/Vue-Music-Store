@@ -1,7 +1,8 @@
 <template>
   <section>
     <header>
-      <h1>Formidable Music Store</h1>
+      <h1>Formidable</h1>
+      <h2>Music Store</h2>
       <!-- <img v-bind:src="require('@/assets/CD.jpg')" alt=""> -->
     </header>
     <span
@@ -49,7 +50,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 section {
-  background: radial-gradient(closest-side, #756c1b, #0e99b5, #022d36);
+  //background: radial-gradient(closest-side, #756c1b, #0e99b5, #022d36);
+  background: linear-gradient(#022d36, #0e99b5);
   border-bottom: 5px solid $merlit-purple-color;
   height: 100vh;
   display: flex;
@@ -57,8 +59,18 @@ section {
   justify-content: center;
 
   header {
-    p {
-      color: $throbbing-dark-color;
+    h1 {
+      font-size: 200px;
+      margin: 0;
+      color: $bicycle-orange-color;
+      text-shadow: #fff 1px 0 10px;
+    }
+    h2 {
+      font-size: 180px;
+      margin: 0;
+      font-family: "neon";
+      color: $bicycle-orange-color;
+      text-shadow: #fff 1px 0 10px;
     }
   }
   .starry {
