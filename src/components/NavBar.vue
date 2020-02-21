@@ -64,7 +64,7 @@ section {
     flex-flow: row nowrap;
     justify-content: center;
     margin: auto auto;
-    z-index: 1;
+    z-index: 2;
   }
 
   h2 {

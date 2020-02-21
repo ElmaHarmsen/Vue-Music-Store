@@ -1,8 +1,7 @@
 <template>
   <section>
-    <div class="navbar-wrapper">
-      <NavBar />
-    </div>
+    <NavbarBackground />
+
     <div class="info-properties">
       <div>
         <h2>Hello</h2>
@@ -18,10 +17,10 @@
 export default {
   name: "Product",
   components: {
-    NavBar
+    NavbarBackground
   }
 };
-import NavBar from "./components/NavBar.vue";
+import NavbarBackground from "./components/NavbarBackground.vue";
 </script>
 
 <style lang="scss" scoped>

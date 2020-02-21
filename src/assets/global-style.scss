@@ -28,3 +28,11 @@ p {
 .router-link {
     text-decoration: none;
 }
+
+.starry {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 100px;
+    z-index: 1;
+  }

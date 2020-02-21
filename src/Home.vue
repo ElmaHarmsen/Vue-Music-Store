@@ -4,12 +4,18 @@
 
     <HelloWorld />
 
-    <div class="music-item-wrapper">
-      <MusicItem
-        v-for="listitem in musicItems"
-        v-bind:key="listitem.id"
-        v-bind:single="listitem"
-      ></MusicItem>
+    <div class="pageTitle">
+      <h1>{{ pageTitles }}</h1>
+      <div data-trigger class="pageTitleBubble">
+        <h2>{{ pageTitlesBubble }}</h2>
+      </div>
+      <div class="music-item-wrapper">
+        <MusicItem
+          v-for="listitem in musicItems"
+          v-bind:key="listitem.id"
+          v-bind:single="listitem"
+        ></MusicItem>
+      </div>
     </div>
 
     <PageIndicator
@@ -27,42 +33,17 @@ import NavBar from "./components/NavBar.vue";
 import MusicItem from "./components/MusicItem.vue";
 import PageIndicator from "./components/PageIndicator.vue";
 
-//import json from "./assets/MusicStoreData.json";
+import ScrollTrigger from "@terwanerik/scrolltrigger";
 
 export default {
   name: "Home",
   data: function() {
     return {
       smth: 0,
-      //always a function with a return
 
       homePageNumber: 1,
 
-      // consistentButton: [
-      //   {
-      //     id: 1,
-      //     content: "CD's"
-      //   },
-      //   {
-      //     id: 2,
-      //     content: "LP's"
-      //   },
-      //   {
-      //     id: 3,
-      //     content: "Artists"
-      //   }
-      // ],
       jsonData: []
-      //jsonData: json
-
-      /*
-      1. data function returns jsonData which is an array.
-      2. the const rawData gets the json file.
-      3. the array jsonData is set to rawData, now jsonData contains the rawJson.
-      4. a new array, musicItemData, is created.
-      5. the array musicItemData is set to the array jsonData,
-         and is accessed by using this.
-       */
     };
   },
   computed: {
@@ -76,8 +57,38 @@ export default {
         case 2:
           musicItemData = this.jsonData[1];
           break;
+
+        case 3:
+          musicItemData = this.jsonData[2];
+          break;
       }
       return musicItemData;
+    },
+    pageTitles: function() {
+      let pageTitle = "";
+      if (this.musicItems[0].type === "cd") {
+        return "You are currently looking at our top CD's";
+      }
+      if (this.musicItems[1].type === "artist") {
+        return "These are some of the best Artists";
+      }
+      if (this.musicItems[2].type === "lp") {
+        return "You are currently looking at our top LP's";
+      }
+      return pageTitle;
+    },
+    pageTitlesBubble: function() {
+      let pageTitleBubble = "";
+      if (this.musicItems[0].type === "cd") {
+        return "CD's";
+      }
+      if (this.musicItems[1].type === "artist") {
+        return "Artists";
+      }
+      if (this.musicItems[2].type === "lp") {
+        return "LP's";
+      }
+      return pageTitleBubble;
     }
   },
   components: {
@@ -87,12 +98,15 @@ export default {
     PageIndicator
   },
   created: function() {
-    //always a function
     setInterval(() => {
       this.smth = Math.random();
     }, 1000);
     const rawData = require("./assets/MusicStoreData.json");
     this.jsonData = rawData.musicStoreData;
+  },
+  mounted: function() {
+    const triggerBubble = new ScrollTrigger();
+    triggerBubble.add("[data-trigger]");
   }
   // watch: {
   //   smth: function(theNewValue, theValueItWasBefore) {
@@ -110,13 +124,45 @@ export default {
   display: flex;
   flex-flow: column nowrap;
 
-  .music-item-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin: auto auto;
-    width: 75%;
-    flex-basis: 25%;
+  .pageTitle {
+    h1 {
+      color: $white-color;
+      text-shadow: #9a151a 1px 0 10px;
+      margin: 100px 0px 50px 0px;
+    }
+    .music-item-wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin: auto auto;
+      width: 75%;
+      flex-basis: 25%;
+    }
+  }
+  .pageTitleBubble {
+    border: 5px solid $white-color;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px #9a151a, 0px 0px 10px #9a151a;
+    width: 120px;
+    height: 120px;
+    position: sticky;
+    top: 50%;
+    left: calc(100% - 150px);
+    margin-top: -150px;
+
+    h2 {
+      color: $white-color;
+      text-shadow: #9a151a 1px 0 10px;
+      font-size: 40px;
+    }
+  }
+  .visible,
+  .invisible {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .visible {
+    opacity: 1;
   }
 }
 </style>

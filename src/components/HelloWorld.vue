@@ -2,7 +2,7 @@
   <section>
     <header>
       <h1>Formidable</h1>
-      <h2>Music Store</h2>
+      <h1>Music Store</h1>
       <!-- <img v-bind:src="require('@/assets/CD.jpg')" alt=""> -->
     </header>
     <span
@@ -15,6 +15,9 @@
         top: star.positionY + 'px'
       }"
     ></span>
+    <i class="material-icons">
+      keyboard_arrow_down
+    </i>
   </section>
 </template>
 
@@ -51,11 +54,11 @@ export default {
 <style scoped lang="scss">
 section {
   //background: radial-gradient(closest-side, #756c1b, #0e99b5, #022d36);
-  background: linear-gradient(#022d36, #0e99b5);
+  background: linear-gradient(#0e99b5, #022d36);
   border-bottom: 5px solid $merlit-purple-color;
   height: 100vh;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   justify-content: center;
 
   header {
@@ -64,20 +67,33 @@ section {
       margin: 0;
       color: $bicycle-orange-color;
       text-shadow: #fff 1px 0 10px;
-    }
-    h2 {
-      font-size: 180px;
-      margin: 0;
-      font-family: "neon";
-      color: $bicycle-orange-color;
-      text-shadow: #fff 1px 0 10px;
+      position: relative;
+      z-index: 2;
     }
   }
-  .starry {
+  .material-icons {
+    color: $bicycle-orange-color;
+    text-shadow: #fff 1px 0 10px;
+    font-size: 100px;
     position: absolute;
-    width: 3px;
-    height: 3px;
-    border-radius: 100px;
+    z-index: 2;
+    bottom: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: arrowAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes arrowAnimation {
+    0% {
+      bottom: 10vh;
+    }
+    50% {
+      bottom: 5vh;
+    }
+    100% {
+      bottom: 10vh;
+    }
   }
 }
 </style>

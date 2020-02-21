@@ -1,10 +1,11 @@
 <template>
   <router-link to="/product" class="router-link">
     <section>
-      <img v-bind:src="single.imageUrl" alt="" />
+      <img v-bind:src="require('@/assets/' + single.imageUrl)" alt="" />
+      <!-- <div v-bind:style="{backgroundImage: url('single.imageUrl')}"></div> -->
       <div v-if="single.type === 'cd'">
+        <p>{{ single.title }}</p>
         <ul>
-          <li>{{ single.title }}</li>
           <li>{{ single.artist }}</li>
           <li>{{ single.releaseDate }}</li>
           <li>{{ albumLength }}</li>
@@ -24,6 +25,24 @@
         <ul>
           <li v-html="popularSongs"></li>
         </ul>
+      </div>
+
+      <div v-if="single.type === 'lp'">
+        <p>{{ single.title }}</p>
+        <ul>
+          <li>{{ single.artist }}</li>
+          <li>Label: {{ single.label }}</li>
+          <li>LP Records: {{ single.LPrecords }}</li>
+          <li>{{ albumLength }}</li>
+        </ul>
+        <p v-if="single.inventory > 3">{{ single.price }}</p>
+        <p
+          v-else-if="single.inventory < 3 && single.inventory > 0"
+          class="stock"
+        >
+          Almost sold out!
+        </p>
+        <p v-else class="stock">Out of Stock</p>
       </div>
     </section>
   </router-link>
@@ -69,11 +88,11 @@ section {
     height: 250px;
     width: auto;
   }
-
   ul {
     list-style: none;
     text-align: left;
-    padding: 20px;
+    padding: 10px;
+    margin: 0px;
 
     li {
       font-family: "segoe-ui";
@@ -84,8 +103,9 @@ section {
   p {
     color: $white-color;
     font-family: "dancing-script";
-    font-size: 25px;
-    margin: 0;
+    font-size: 30px;
+    margin: 0px;
+    padding: 10px 0px;
   }
   .stock {
     color: $grey-color;

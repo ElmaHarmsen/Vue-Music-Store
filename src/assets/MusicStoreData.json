@@ -1,180 +1,282 @@
 {
     "musicStoreData": [
-        {
-            "cdInfo": [
-                {
-                "id": 0,
-                "type": "cd",
-                "title": "500 Miles",
-                "artist": "The Hooters",
-                "releaseDate": "2004",
-                "songs": "24",
-                "duration": "1hr 44min",
-                "price": "€5,-",
-                "inventory": 5,
-                "imageUrl": "./assets/500-miles.jpg"
-                },
-                {
-                "id": 1,
-                "type": "cd",
-                "title": "Hell Freezes Over",
-                "artist": "Eagles",
-                "releaseDate": "1994",
-                "songs": "15",
-                "duration": "1hr 14min",
-                "price": "€8,-",
-                "inventory": 1,
-                "imageUrl": "./assets/hell-freezes-over.jpg"
-                },
-                {
-                "id": 2,
-                "type": "cd",
-                "title": "The Division Bell",
-                "artist": "Pink Floyd",
-                "releaseDate": "1994",
-                "songs": "11",
-                "duration": "1hr 6min",
-                "price": "€7,-",
-                "inventory": 8,
-                "imageUrl": "./assets/division-bell.jpg"
-                },
-                {
-                "id": 3,
-                "type": "cd",
-                "title": "Return to Forever",
-                "artist": "Scorpions",
-                "releaseDate": "2016",
-                "songs": "19",
-                "duration": "1hr 14min",
-                "price": "€11,-",
-                "inventory": 3,
-                "imageUrl": "./assets/return-to-forever.jpg"
-                },
-                {
-                "id": 4,
-                "type": "cd",
-                "title": "L.A. Woman",
-                "artist": "The Doors",
-                "releaseDate": "1971",
-                "songs": "10",
-                "duration": "48min",
-                "price": "€6,-",
-                "inventory": 9,
-                "imageUrl": "./assets/la-woman.jpg"
-                },
-                {
-                "id": 5,
-                "type": "cd",
-                "title": "Eagles",
-                "artist": "Eagles",
-                "releaseDate": "1972",
-                "songs": "10",
-                "duration": "37min",
-                "price": "€4",
-                "inventory": 5,
-                "imageUrl": "./assets/eagles.jpeg"
-                },
-                {
-                "id": 6,
-                "type": "cd",
-                "title": "ABBA Gold",
-                "artist": "ABBA",
-                "releaseDate": "2008",
-                "songs": "19",
-                "duration": "1hr 18min",
-                "price": "€8",
-                "inventory": 1,
-                "imageUrl": "./assets/abba-gold.jpg"
-                },
-                {
-                "id": 7,
-                "type": "cd",
-                "title": "Arrival",
-                "artist": "ABBA",
-                "releaseDate": "1976",
-                "songs": "12",
-                "duration": "41min",
-                "price": "€6",
-                "inventory": 6,
-                "imageUrl": "./assets/arrival.png"
-                }
-            ]
-        },
-        {
-            "artistInfo": [
-                {
-                "id": 0,
-                "type": "artist",
-                "name": "Eagles",
-                "songOne": "Hotel California",
-                "songTwo": "Take It Easy",
-                "songThree": "Life in the Fast Lane",
-                "imageUrl": "./assets/artist-eagles.jpeg"
-                },
-                {
-                "id": 1,
-                "type": "artist",
-                "name": "ABBA",
-                "songOne": "Dancing Queen",
-                "songTwo": "Gimme! Gimme! Gimme!",
-                "songThree": "Mamma Mia",
-                "imageUrl": "./assets/artist-eagles.jpeg"
-                },
-                {
-                "id": 2,
-                "type": "artist",
-                "name": "Scorpions",
-                "songOne": "Wind Of Change",
-                "songTwo": "Rock You Like A Hurricane",
-                "songThree": "Still Loving You",
-                "imageUrl": "./assets/artist-eagles.jpeg"
-                },
-                {
-                "id": 3,
-                "type": "artist",
-                "name": "The Hooters",
-                "songOne": "500 Miles",
-                "songTwo": "All You Zombies",
-                "songThree": "Johhny B.",
-                "imageUrl": "./assets/artist-eagles.jpeg"
-                },
-                {
-                "id": 4,
-                "type": "artist",
-                "name": "Pink Floyd",
-                "songOne": "Another Brick in the Wall, Pt.2",
-                "songTwo": "Wish You Were Here",
-                "songThree": "Comfortably Numb",
-                "imageUrl": "./assets/artist-eagles.jpeg"
-                },
-                {
-                "id": 5,
-                "type": "artist",
-                "name": "The Doors",
-                "songOne": "Riders on the Storm",
-                "songTwo": "Light My Fire",
-                "songThree": "Break on ThroughTo the Other Side",
-                "imageUrl": "./assets/artist-eagles.jpeg"
-                },
-                {
-                "id": 6,
-                "type": "artist",
-                "name": "Alter Bridge",
-                "songOne": "Metalingus",
-                "songTwo": "Watch Over You",
-                "songThree": "Blackbird",
-                "imageUrl": "./assets/artist-eagles.jpeg"
-                },
-                {
-                "id": 7,
-                "type": "artist",
-                "name": "Kansas",
-                "songOne": "",
-                "songTwo": "",
-                "songThree": "",
-                "imageUrl": "./assets/artist-eagles.jpeg"
-                }
-            ]
-        }
+        [
+            {
+            "id": 0,
+            "type": "cd",
+            "title": "500 Miles",
+            "artist": "The Hooters",
+            "releaseDate": "2004",
+            "songs": "24",
+            "duration": "1hr 44min",
+            "price": "€5,-",
+            "inventory": 5,
+            "imageUrl": "500-miles.jpg"
+            },
+            {
+            "id": 1,
+            "type": "cd",
+            "title": "Hell Freezes Over",
+            "artist": "Eagles",
+            "releaseDate": "1994",
+            "songs": "15",
+            "duration": "1hr 14min",
+            "price": "€8,-",
+            "inventory": 1,
+            "imageUrl": "hell-freezes-over.jpg"
+            },
+            {
+            "id": 2,
+            "type": "cd",
+            "title": "The Division Bell",
+            "artist": "Pink Floyd",
+            "releaseDate": "1994",
+            "songs": "11",
+            "duration": "1hr 6min",
+            "price": "€7,-",
+            "inventory": 8,
+            "imageUrl": "division-bell.jpg"
+            },
+            {
+            "id": 3,
+            "type": "cd",
+            "title": "Return to Forever",
+            "artist": "Scorpions",
+            "releaseDate": "2016",
+            "songs": "19",
+            "duration": "1hr 14min",
+            "price": "€11,-",
+            "inventory": 3,
+            "imageUrl": "return-to-forever.jpg"
+            },
+            {
+            "id": 4,
+            "type": "cd",
+            "title": "L.A. Woman",
+            "artist": "The Doors",
+            "releaseDate": "1971",
+            "songs": "10",
+            "duration": "48min",
+            "price": "€6,-",
+            "inventory": 9,
+            "imageUrl": "la-woman.jpg"
+            },
+            {
+            "id": 5,
+            "type": "cd",
+            "title": "Eagles",
+            "artist": "Eagles",
+            "releaseDate": "1972",
+            "songs": "10",
+            "duration": "37min",
+            "price": "€4",
+            "inventory": 5,
+            "imageUrl": "eagles.jpeg"
+            },
+            {
+            "id": 6,
+            "type": "cd",
+            "title": "ABBA Gold",
+            "artist": "ABBA",
+            "releaseDate": "2008",
+            "songs": "19",
+            "duration": "1hr 18min",
+            "price": "€8",
+            "inventory": 1,
+            "imageUrl": "abba-gold.jpg"
+            },
+            {
+            "id": 7,
+            "type": "cd",
+            "title": "Arrival",
+            "artist": "ABBA",
+            "releaseDate": "1976",
+            "songs": "12",
+            "duration": "41min",
+            "price": "€6",
+            "inventory": 6,
+            "imageUrl": "arrival.png"
+            }
+        ],
+        [
+            {
+            "id": 0,
+            "type": "artist",
+            "name": "Eagles",
+            "songOne": "Hotel California",
+            "songTwo": "Take It Easy",
+            "songThree": "Life in the Fast Lane",
+            "imageUrl": "artist-eagles.jpeg"
+            },
+            {
+            "id": 1,
+            "type": "artist",
+            "name": "ABBA",
+            "songOne": "Dancing Queen",
+            "songTwo": "Gimme! Gimme! Gimme!",
+            "songThree": "Mamma Mia",
+            "imageUrl": "artist-eagles.jpeg"
+            },
+            {
+            "id": 2,
+            "type": "artist",
+            "name": "Scorpions",
+            "songOne": "Wind Of Change",
+            "songTwo": "Rock You Like A Hurricane",
+            "songThree": "Still Loving You",
+            "imageUrl": "artist-eagles.jpeg"
+            },
+            {
+            "id": 3,
+            "type": "artist",
+            "name": "The Hooters",
+            "songOne": "500 Miles",
+            "songTwo": "All You Zombies",
+            "songThree": "Johhny B.",
+            "imageUrl": "artist-eagles.jpeg"
+            },
+            {
+            "id": 4,
+            "type": "artist",
+            "name": "Pink Floyd",
+            "songOne": "Another Brick in the Wall, Pt.2",
+            "songTwo": "Wish You Were Here",
+            "songThree": "Comfortably Numb",
+            "imageUrl": "artist-eagles.jpeg"
+            },
+            {
+            "id": 5,
+            "type": "artist",
+            "name": "The Doors",
+            "songOne": "Riders on the Storm",
+            "songTwo": "Light My Fire",
+            "songThree": "Break on Through",
+            "imageUrl": "artist-eagles.jpeg"
+            },
+            {
+            "id": 6,
+            "type": "artist",
+            "name": "Alter Bridge",
+            "songOne": "Metalingus",
+            "songTwo": "Watch Over You",
+            "songThree": "Blackbird",
+            "imageUrl": "artist-eagles.jpeg"
+            },
+            {
+            "id": 7,
+            "type": "artist",
+            "name": "Kansas",
+            "songOne": "Carry on Wayward Song",
+            "songTwo": "Dust in the Wind",
+            "songThree": "Point of Know Return",
+            "imageUrl": "artist-eagles.jpeg"
+            }
+        ],
+        [
+            {
+            "id": 0,
+            "type": "lp",
+            "title": "Greatest Hits",
+            "artist": "Queen",
+            "songs": "17",
+            "duration": "58min",
+            "label": "Island",
+            "LPrecords": 2,
+            "price": "€19",
+            "inventory": 7,
+            "imageUrl": "greatest-hits.jpg"
+            },
+            {
+            "id": 1,
+            "type": "lp",
+            "title": "ABBA Gold",
+            "artist": "ABBA",
+            "songs": "19",
+            "duration": "1hr 18min",
+            "label": "Universal",
+            "LPrecords": 2,
+            "price": "€21",
+            "inventory": 11,
+            "imageUrl": "abba-gold-lp.jpg"
+            },
+            {
+            "id": 2,
+            "type": "lp",
+            "title": "Californication",
+            "artist": "Red Hot Chili Peppers",
+            "songs": "15",
+            "duration": "56min",
+            "label": "Rhcp",
+            "LPrecords": 2,
+            "price": "€8",
+            "inventory": 2,
+            "imageUrl": "californication.jpg"
+            },
+            {
+            "id": 3,
+            "type": "lp",
+            "title": "Everyday Life",
+            "artist": "Coldplay",
+            "songs": "16",
+            "duration": "52min",
+            "label": "Warner Music",
+            "LPrecords": 2,
+            "price": "€17",
+            "inventory": 9,
+            "imageUrl": "everyday-life.jpg"
+            },
+            {
+            "id": 4,
+            "type": "lp",
+            "title": "Thriller",
+            "artist": "Michael Jackson",
+            "songs": "9",
+            "duration": "42min",
+            "label": "Epic",
+            "LPrecords": 1,
+            "price": "€15",
+            "inventory": 7,
+            "imageUrl": "thriller.jpg"
+            },
+            {
+            "id": 5,
+            "type": "lp",
+            "title": "21",
+            "artist": "Adele",
+            "songs": "11",
+            "duration": "48min",
+            "label": "XI Recordings",
+            "LPrecords": 1,
+            "price": "€21",
+            "inventory": 5,
+            "imageUrl": "adele-21.jpg"
+            },
+            {
+            "id": 6,
+            "type": "lp",
+            "title": "The Wall",
+            "artist": "Pink Floyd, Roger Waters",
+            "songs": "26",
+            "duration": "1hr 20min",
+            "label": "EMI",
+            "LPrecords": 2,
+            "price": "€18",
+            "inventory": 4,
+            "imageUrl": "the-wall.jpg"
+            },
+            {
+            "id": 7,
+            "type": "lp",
+            "title": "Bad",
+            "artist": "Michael Jackson",
+            "songs": "10",
+            "duration": "43min",
+            "label": "Epic",
+            "LPrecords": 1,
+            "price": "€7",
+            "inventory": 2,
+            "imageUrl": "bad.jpg"
+            }
+        ]
     ]
 }
