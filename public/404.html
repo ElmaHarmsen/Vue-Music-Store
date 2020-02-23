@@ -19,14 +19,16 @@
           height: 100vh;
       }
       h1 {
-          font-family: "dancing-script";
+          font-family: "neon";
           color: #680e34 !important;
+          text-shadow: #fff 1px 0 10px;
           font-size: 65px;
       }
       h2 {
           font-family: "dancing-script";
           font-size: 40px;
           color: #680e34;
+          text-shadow: #fff 1px 0 10px;
       }
       ul {
           list-style: none;
@@ -34,6 +36,7 @@
       li {
           font-family: "segoe-ui";
           font-size: 25px;
+          color: #fff;
       }
       .bluetooth-animation {
           display: flex;
@@ -44,7 +47,7 @@
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          background-color: #680e34;
+          background-color: #fff;
           position: relative;
           align-self: center;
       }
@@ -65,8 +68,9 @@
         margin: 10px 0px 0px 0px;
       }
       .consistent-button-border {
+        border: 5px solid white;
         border-radius: 50%;
-        box-shadow: 0 8px 6px -6px #280904;
+        box-shadow: inset 0px 0px 10px #fff, 0px 0px 10px #fff;
         width: 120px;
         height: 120px;
         display: flex;
@@ -79,10 +83,6 @@
         margin-bottom: 25px;
         margin-left: 50%;
         transform: translateX(-50%);
-      }
-      h2 {
-        
-        font-family: "dancing-script";
       }
   
       @keyframes bluetoothDotLeft {
@@ -117,7 +117,7 @@
       <h1>An error has occured</h1>
       <div class="bluetooth-animation">
         <span class="bluetooth-dot dot-left"></span>
-        <img src="./bluetooth-24px.png" alt="" class="material-icons">
+        <img src="./bluetooth-white-24px.png" alt="" class="material-icons">
         <span class="bluetooth-dot dot-right"></span>
       </div>
       <div>
