@@ -83,10 +83,12 @@ section {
   border-radius: 10px;
   box-shadow: 0 8px 6px -6px $throbbing-dark-color;
   margin: 50px 0px 50px 0px;
+  height: 450px;
+  justify-content: space-between;
 
   img {
-    height: 250px;
-    width: auto;
+    width: 250px;
+    height: auto;
   }
   ul {
     list-style: none;

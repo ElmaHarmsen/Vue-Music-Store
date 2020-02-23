@@ -115,7 +115,7 @@
             "songOne": "Dancing Queen",
             "songTwo": "Gimme! Gimme! Gimme!",
             "songThree": "Mamma Mia",
-            "imageUrl": "artist-eagles.jpeg"
+            "imageUrl": "abba.png"
             },
             {
             "id": 2,
@@ -124,7 +124,7 @@
             "songOne": "Wind Of Change",
             "songTwo": "Rock You Like A Hurricane",
             "songThree": "Still Loving You",
-            "imageUrl": "artist-eagles.jpeg"
+            "imageUrl": "scorpions.jpeg"
             },
             {
             "id": 3,
@@ -133,7 +133,7 @@
             "songOne": "500 Miles",
             "songTwo": "All You Zombies",
             "songThree": "Johhny B.",
-            "imageUrl": "artist-eagles.jpeg"
+            "imageUrl": "hooters.jpeg"
             },
             {
             "id": 4,
@@ -142,7 +142,7 @@
             "songOne": "Another Brick in the Wall, Pt.2",
             "songTwo": "Wish You Were Here",
             "songThree": "Comfortably Numb",
-            "imageUrl": "artist-eagles.jpeg"
+            "imageUrl": "pink-floyd.jpg"
             },
             {
             "id": 5,
@@ -151,7 +151,7 @@
             "songOne": "Riders on the Storm",
             "songTwo": "Light My Fire",
             "songThree": "Break on Through",
-            "imageUrl": "artist-eagles.jpeg"
+            "imageUrl": "doors.jpg"
             },
             {
             "id": 6,
@@ -160,7 +160,7 @@
             "songOne": "Metalingus",
             "songTwo": "Watch Over You",
             "songThree": "Blackbird",
-            "imageUrl": "artist-eagles.jpeg"
+            "imageUrl": "alter-bridge.jpg"
             },
             {
             "id": 7,
@@ -169,7 +169,7 @@
             "songOne": "Carry on Wayward Song",
             "songTwo": "Dust in the Wind",
             "songThree": "Point of Know Return",
-            "imageUrl": "artist-eagles.jpeg"
+            "imageUrl": "kansas.jpeg"
             }
         ],
         [
