@@ -35,4 +35,14 @@ p {
     height: 3px;
     border-radius: 100px;
     z-index: 1;
+}
+
+.headers {
+    text-align: center;
+
+    h1 {
+      color: $white-color;
+      text-shadow: #9a151a 1px 0 10px;
+      margin: 100px 0px 100px 0px;
+    }
   }

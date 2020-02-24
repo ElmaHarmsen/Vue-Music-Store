@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/product" class="router-link">
+  <router-link v-bind:to="`/product/${single.id}`" class="router-link">
     <section>
       <img v-bind:src="require('@/assets/' + single.imageUrl)" alt="" />
       <!-- <div v-bind:style="{backgroundImage: url('single.imageUrl')}"></div> -->
