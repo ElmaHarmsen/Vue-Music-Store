@@ -1,5 +1,8 @@
 <template>
-  <router-link v-bind:to="`/product/${single.id}`" class="router-link">
+  <router-link
+    v-bind:to="`/product/${single.type}/${single.title}`"
+    class="router-link"
+  >
     <section>
       <img v-bind:src="require('@/assets/' + single.imageUrl)" alt="" />
       <!-- <div v-bind:style="{backgroundImage: url('single.imageUrl')}"></div> -->
@@ -108,9 +111,6 @@ section {
     font-size: 30px;
     margin: 0px;
     padding: 10px 0px;
-  }
-  .stock {
-    color: $grey-color;
   }
 }
 </style>

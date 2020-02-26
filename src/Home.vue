@@ -123,46 +123,5 @@ export default {
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
-
-  .pageTitle {
-    h1 {
-      color: $white-color;
-      text-shadow: #9a151a 1px 0 10px;
-      margin: 100px 0px 50px 0px;
-    }
-    .music-item-wrapper {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      margin: auto auto;
-      width: 75%;
-      flex-basis: 25%;
-    }
-  }
-  .pageTitleBubble {
-    border: 5px solid $white-color;
-    border-radius: 50%;
-    box-shadow: inset 0px 0px 10px #9a151a, 0px 0px 10px #9a151a;
-    width: 120px;
-    height: 120px;
-    position: sticky;
-    top: 50%;
-    left: calc(100% - 150px);
-    margin-top: -150px;
-
-    h2 {
-      color: $white-color;
-      text-shadow: #9a151a 1px 0 10px;
-      font-size: 40px;
-    }
-  }
-  .visible,
-  .invisible {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  .visible {
-    opacity: 1;
-  }
 }
 </style>

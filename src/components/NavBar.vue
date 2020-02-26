@@ -22,7 +22,8 @@ export default {
       consistentButton: [
         {
           id: 0,
-          content: "Home"
+          content: "Home",
+          path: "home"
         },
         {
           id: 1,

@@ -46,7 +46,7 @@
             "songs": "19",
             "duration": "1hr 14min",
             "price": "€11,-",
-            "inventory": 3,
+            "inventory": 0,
             "imageUrl": "return-to-forever.jpg"
             },
             {
@@ -71,7 +71,7 @@
             "duration": "37min",
             "price": "€4",
             "inventory": 5,
-            "imageUrl": "eagles.jpeg"
+            "imageUrl": "eagles.jpg"
             },
             {
             "id": 6,
@@ -83,7 +83,7 @@
             "duration": "1hr 18min",
             "price": "€8",
             "inventory": 1,
-            "imageUrl": "abba-gold.jpg"
+            "imageUrl": "abba-gold.png"
             },
             {
             "id": 7,
@@ -95,7 +95,7 @@
             "duration": "41min",
             "price": "€6",
             "inventory": 6,
-            "imageUrl": "arrival.png"
+            "imageUrl": "abba-arrival.jpg"
             }
         ],
         [

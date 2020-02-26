@@ -2,17 +2,23 @@
   <section>
     <NavbarBackground />
 
-    <div class="headers">
+    <!-- <div class="headers">
       <h1>Here we have...</h1>
-    </div>
+    </div> -->
 
     <div class="artist-properties">
-      <div>
-        <h1>Name of Artist</h1>
+      <div class="artist-images artist-image-1">
+        <h1>Name of the Artist</h1>
       </div>
-      <div class="artist-images artist-image-1"></div>
-      <div class="artist-images artist-image-2"></div>
-      <div class="artist-images artist-image-3"></div>
+      <div class="artist-images artist-image-2">
+        <h1>Popular Song One</h1>
+      </div>
+      <div class="artist-images artist-image-3">
+        <h1>Popular Song Two</h1>
+      </div>
+      <div class="artist-images artist-image-4">
+        <h1>Popular Song Three</h1>
+      </div>
     </div>
   </section>
 </template>
@@ -29,20 +35,20 @@ import NavbarBackground from "./components/NavbarBackground.vue";
 
 <style lang="scss" scoped>
 section {
-  padding-top: 100px;
+  padding-top: 90px;
 
   .artist-properties {
     display: flex;
     flex-flow: column wrap;
     text-align: center;
+    width: 75%;
+    margin: 0px auto;
   }
   .artist-images {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    width: 75%;
-    margin: 0px auto;
   }
   .artist-image-1 {
     background-image: url("assets/random.png");
@@ -52,6 +58,9 @@ section {
   }
   .artist-image-3 {
     background-image: url("assets/random3.jpeg");
+  }
+  .artist-image-4 {
+    background-image: url("assets/random4.jpeg");
   }
 }
 </style>

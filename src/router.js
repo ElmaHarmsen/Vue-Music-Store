@@ -12,9 +12,10 @@ export default new VueRouter({
       component: () => import("@/Home")
     },
     {
-      path: "/product/:id",
+      path: "/product/:type/:title",
       name: "product",
-      component: () => import("@/Product")
+      component: () => import("@/Product"),
+      props: true
     },
     // {
     //   path: "/artist",
