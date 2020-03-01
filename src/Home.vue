@@ -9,6 +9,7 @@
       <div data-trigger class="pageTitleBubble">
         <h2>{{ pageTitlesBubble }}</h2>
       </div>
+
       <div class="music-item-wrapper">
         <MusicItem
           v-for="listitem in musicItems"
@@ -24,6 +25,8 @@
       v-on:increasePage="homePageNumber += $event"
       v-on:decreasePage="homePageNumber -= $event"
     ></PageIndicator>
+
+    <ReceiverHome> </ReceiverHome>
   </div>
 </template>
 
@@ -32,6 +35,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import NavBar from "./components/NavBar.vue";
 import MusicItem from "./components/MusicItem.vue";
 import PageIndicator from "./components/PageIndicator.vue";
+import ReceiverHome from "./components/ReceiverHome.vue";
 
 import ScrollTrigger from "@terwanerik/scrolltrigger";
 
@@ -95,7 +99,8 @@ export default {
     HelloWorld,
     NavBar,
     MusicItem,
-    PageIndicator
+    PageIndicator,
+    ReceiverHome
   },
   created: function() {
     setInterval(() => {
@@ -123,5 +128,36 @@ export default {
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
+}
+.pageTitle {
+  h1 {
+    color: $white-color;
+    text-shadow: #9a151a 1px 0 10px;
+    margin: 100px 0px 50px 0px;
+  }
+  .pageTitleBubble {
+    border: 5px solid $white-color;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px #9a151a, 0px 0px 10px #9a151a;
+    width: 120px;
+    height: 120px;
+    position: sticky;
+    top: 30%;
+    left: calc(100% - 150px);
+    margin-top: -150px;
+
+    h2 {
+      color: $merlit-purple-color;
+      font-size: 40px;
+    }
+  }
+  .music-item-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: auto auto;
+    width: 75%;
+    flex-basis: 25%;
+  }
 }
 </style>

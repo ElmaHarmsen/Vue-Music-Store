@@ -2,42 +2,60 @@
   <section>
     <NavbarBackground />
 
-    <div class="headers">
+    <div class="pageTitle">
       <h1>This is...</h1>
-    </div>
-
-    <div class="info-properties">
       <div
-        class="left"
-        v-bind:style="{
-          backgroundImage:
-            'url(' + require('@/assets/' + productData.imageUrl) + ')'
-        }"
+        data-trigger
+        class="pageTitleBubble"
+        v-if="productData.inventory === 0"
       >
-        <div></div>
+        <h2 class="notToCartContent"></h2>
       </div>
-      <div class="right">
-        <h2>{{ productData.title }}</h2>
-        <ul>
-          <li>By {{ productData.artist }}</li>
-          <li>Released in {{ productData.releaseDate }}</li>
-          <li>{{ productData.songs }} Songs</li>
-          <li>{{ productData.duration }}</li>
-        </ul>
-        <h2 v-if="productData.inventory > 0">
-          For only {{ productData.price }}
-        </h2>
-        <h2 v-else class="stock">Out of Stock</h2>
+      <div v-else data-trigger class="pageTitleBubble">
+        <h2 class="toCartContent"></h2>
       </div>
-    </div>
 
-    <div class="headers">
-      <h1>These are the tracks</h1>
+      <div class="info-properties">
+        <div
+          class="left"
+          v-bind:style="{
+            backgroundImage:
+              'url(' + require('@/assets/' + productData.imageUrl) + ')'
+          }"
+        >
+          <div></div>
+        </div>
+        <div class="right">
+          <h2>{{ productData.title }}</h2>
+          <ul>
+            <li>By {{ productData.artist }}</li>
+            <li>Released in {{ productData.releaseDate }}</li>
+            <li>{{ productData.songs }} Songs</li>
+            <li>{{ productData.duration }}</li>
+          </ul>
+          <h2 v-if="productData.inventory > 0">
+            For only {{ productData.price }}
+          </h2>
+          <h2 v-else class="stock">Out of Stock</h2>
+        </div>
+      </div>
+
+      <div class="headers">
+        <h1>These are the tracks</h1>
+      </div>
+
+      <div class="headers">
+        <h1>What others think</h1>
+      </div>
     </div>
+    <!--End of div with class pageTitle-->
   </section>
 </template>
 
 <script>
+import NavbarBackground from "./components/NavbarBackground.vue";
+import ScrollTrigger from "@terwanerik/scrolltrigger";
+
 export default {
   name: "Product",
   props: ["type", "title"],
@@ -58,14 +76,63 @@ export default {
           singleObject.type === this.type && singleObject.title === this.title
       )
       .pop();
+  },
+  mounted: function() {
+    const triggerBubble = new ScrollTrigger();
+    triggerBubble.add("[data-trigger]");
   }
 };
-import NavbarBackground from "./components/NavbarBackground.vue";
 </script>
 
 <style lang="scss" scoped>
 section {
   padding-top: 100px;
+
+  .pageTitle {
+    text-align: center;
+
+    h1 {
+      color: $white-color;
+      text-shadow: #9a151a 1px 0 10px;
+      margin: 100px 0px 50px 0px;
+    }
+    .pageTitleBubble {
+      border: 5px solid $white-color;
+      border-radius: 50%;
+      box-shadow: inset 0px 0px 10px #9a151a, 0px 0px 10px #9a151a;
+      width: 120px;
+      height: 120px;
+      position: sticky;
+      top: 30%;
+      left: calc(100% - 150px);
+      margin-top: -150px;
+
+      h2 {
+        color: $merlit-purple-color;
+        font-size: 40px;
+      }
+      .notToCartContent {
+        min-height: 60px;
+        text-align: center;
+        &:after {
+          animation: noAddToCart 2s linear infinite alternate;
+          content: "";
+          font-size: 40px;
+          color: $grey-color;
+        }
+      }
+      .toCartContent {
+        min-height: 60px;
+        text-align: center;
+        &:after {
+          animation: addToCart 2s linear infinite alternate;
+          content: "";
+          font-size: 40px;
+          color: $merlit-purple-color;
+        }
+      }
+    }
+  }
 
   .info-properties {
     background: linear-gradient(
@@ -80,9 +147,9 @@ section {
     flex-flow: row nowrap;
     justify-content: space-between;
     width: 75%;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    margin: auto auto;
     height: 80vh;
+    margin-top: 50px;
 
     .left {
       align-self: center;
@@ -111,6 +178,29 @@ section {
         color: $white-color;
       }
     }
+  }
+}
+@keyframes noAddToCart {
+  0% {
+    content: "Please";
+  }
+  50% {
+    color: #fff;
+  }
+  100% {
+    content: "Wait";
+  }
+}
+
+@keyframes addToCart {
+  0% {
+    content: "In";
+  }
+  50% {
+    color: #fff;
+  }
+  100% {
+    content: "Cart";
   }
 }
 </style>
