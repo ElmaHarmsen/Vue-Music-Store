@@ -17,20 +17,30 @@ export default new VueRouter({
       component: () => import("@/Product"),
       props: true
     },
-    // {
-    //   path: "/artist",
-    //   name: "artist",
-    //   component: () => import("@/Artist")
-    // },
-    // {
-    //   path: "/shoppingcart",
-    //   name: "shoppingcart",
-    //   component: () => import("@/ShoppingCart")
-    // },
     {
       path: "/artist",
       name: "artist",
       component: () => import("@/Artist")
+    },
+    {
+      path: "/cds",
+      name: "cds",
+      component: () => import("@/Cds")
+    },
+    {
+      path: "/artists",
+      name: "artists",
+      component: () => import("@/Artists")
+    },
+    {
+      path: "/lps",
+      name: "lps",
+      component: () => import("@/Lps")
+    },
+    {
+      path: "/shoppingcart",
+      name: "shoppingcart",
+      component: () => import("@/ShoppingCart")
     },
     {
       path: "*",

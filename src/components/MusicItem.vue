@@ -5,7 +5,6 @@
   >
     <section>
       <img v-bind:src="require('@/assets/' + single.imageUrl)" alt="" />
-      <!-- <div v-bind:style="{backgroundImage: url('single.imageUrl')}"></div> -->
       <div v-if="single.type === 'cd'">
         <p>{{ single.title }}</p>
         <ul>
@@ -66,7 +65,6 @@ export default {
         <li>${this.single.songTwo}</li>
         <li>${this.single.songThree}</li>
         `;
-      //in a list
     }
   }
 };

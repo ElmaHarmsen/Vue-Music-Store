@@ -1,11 +1,14 @@
 <template>
   <section>
     <div class="consistent-item-wrapper">
-      <ConsistentButton
+      <router-link
+        v-bind:to="`${btnitem.path}`"
+        class="router-link"
         v-for="btnitem in consistentButton"
         v-bind:key="btnitem.id"
-        v-bind:btnContent="btnitem"
-      ></ConsistentButton>
+      >
+        <ConsistentButton v-bind:btnContent="btnitem"></ConsistentButton>
+      </router-link>
     </div>
   </section>
 </template>
@@ -23,23 +26,27 @@ export default {
         {
           id: 0,
           content: "Home",
-          path: "home"
+          path: "/"
         },
         {
           id: 1,
-          content: "CD's"
+          content: "CD's",
+          path: "/cds"
         },
         {
           id: 2,
-          content: "Artists"
+          content: "Artists",
+          path: "/artists"
         },
         {
           id: 3,
-          content: "LP's"
+          content: "LP's",
+          path: "/lps"
         },
         {
           id: 4,
-          icon: "shopping_cart"
+          icon: "shopping_cart",
+          path: "/shoppingcart"
         }
       ]
     };
