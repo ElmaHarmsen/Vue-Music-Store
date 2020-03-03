@@ -3,7 +3,7 @@
     <NavbarBackground />
 
     <div class="headers">
-      <h1>Cd's</h1>
+      <h1>Discover cd's</h1>
     </div>
 
     <div class="cds-wrapper">
@@ -45,7 +45,7 @@ export default {
           {
             headers: {
               Authorization:
-                "Bearer BQDoCuleznuK7N7dGfOIgUFKFLY8XFSgeGh98zLrkZ--y4ETW-iMe2C_sP3DnTy-nOOlG6wzPUB4BVrtL_Y"
+                "Bearer BQA_Ao71SunZ7KNo4yk3QcEAnXazdL1H6ExQfBIyFU9fOwAeN7d3M_jiscrzOyMKqL3p4ASqOIAHOSb-Glo"
             }
           }
         );

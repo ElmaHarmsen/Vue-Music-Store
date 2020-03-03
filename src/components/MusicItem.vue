@@ -5,12 +5,11 @@
   >
     <section>
       <img v-bind:src="require('@/assets/' + single.imageUrl)" alt="" />
-      <div v-if="single.type === 'cd'">
+      <div v-if="single.type === 'album'">
         <p>{{ single.title }}</p>
         <ul>
           <li>{{ single.artist }}</li>
-          <li>{{ single.releaseDate }}</li>
-          <li>{{ albumLength }}</li>
+          <li>{{ single.releaseDate }} | {{ albumLength }}</li>
         </ul>
         <p v-if="single.inventory > 3">{{ single.price }}</p>
         <p

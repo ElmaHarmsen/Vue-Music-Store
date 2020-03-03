@@ -41,10 +41,6 @@
       </div>
 
       <div class="headers">
-        <h1>These are the tracks</h1>
-      </div>
-
-      <div class="headers">
         <h1>What others think</h1>
       </div>
     </div>

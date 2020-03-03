@@ -18,6 +18,12 @@ export default new VueRouter({
       props: true
     },
     {
+      path: "/spotifyproduct/:type/:name",
+      name: "spotifyproduct",
+      component: () => import("@/SpotifyProduct"),
+      props: true
+    },
+    {
       path: "/artist",
       name: "artist",
       component: () => import("@/Artist")

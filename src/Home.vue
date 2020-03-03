@@ -70,7 +70,7 @@ export default {
     },
     pageTitles: function() {
       let pageTitle = "";
-      if (this.musicItems[0].type === "cd") {
+      if (this.musicItems[0].type === "album") {
         return "You are currently looking at our top CD's";
       }
       if (this.musicItems[1].type === "artist") {
@@ -83,7 +83,7 @@ export default {
     },
     pageTitlesBubble: function() {
       let pageTitleBubble = "";
-      if (this.musicItems[0].type === "cd") {
+      if (this.musicItems[0].type === "album") {
         return "CD's";
       }
       if (this.musicItems[1].type === "artist") {

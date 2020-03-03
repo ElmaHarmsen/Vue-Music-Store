@@ -3,7 +3,7 @@
         [
             {
             "id": 0,
-            "type": "cd",
+            "type": "album",
             "title": "500 Miles",
             "artist": "The Hooters",
             "releaseDate": "2004",
@@ -15,7 +15,7 @@
             },
             {
             "id": 1,
-            "type": "cd",
+            "type": "album",
             "title": "Hell Freezes Over",
             "artist": "Eagles",
             "releaseDate": "1994",
@@ -27,7 +27,7 @@
             },
             {
             "id": 2,
-            "type": "cd",
+            "type": "album",
             "title": "The Division Bell",
             "artist": "Pink Floyd",
             "releaseDate": "1994",
@@ -39,7 +39,7 @@
             },
             {
             "id": 3,
-            "type": "cd",
+            "type": "album",
             "title": "Return to Forever",
             "artist": "Scorpions",
             "releaseDate": "2016",
@@ -51,7 +51,7 @@
             },
             {
             "id": 4,
-            "type": "cd",
+            "type": "album",
             "title": "L.A. Woman",
             "artist": "The Doors",
             "releaseDate": "1971",
@@ -63,7 +63,7 @@
             },
             {
             "id": 5,
-            "type": "cd",
+            "type": "album",
             "title": "Eagles",
             "artist": "Eagles",
             "releaseDate": "1972",
@@ -75,7 +75,7 @@
             },
             {
             "id": 6,
-            "type": "cd",
+            "type": "album",
             "title": "ABBA Gold",
             "artist": "ABBA",
             "releaseDate": "2008",
@@ -87,7 +87,7 @@
             },
             {
             "id": 7,
-            "type": "cd",
+            "type": "album",
             "title": "Arrival",
             "artist": "ABBA",
             "releaseDate": "1976",
