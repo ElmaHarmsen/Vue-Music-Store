@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>What we're made of</h1>
+    <h1>What we're playing for</h1>
     <div>
       <div class="wrapper">
         <!--row 1-->
@@ -11,7 +11,7 @@
         </div>
 
         <div class="display">
-          <h3>Vue.js based website</h3>
+          <h3>You</h3>
         </div>
         <div class="measurements"></div>
 

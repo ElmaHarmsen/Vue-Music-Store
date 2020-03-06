@@ -1,23 +1,31 @@
 <template>
   <section>
     <header>
-      <h1>Thank you for visiting</h1>
-      <h1>my website!</h1>
+      <h1>Thank you for</h1>
+      <h1>visiting my website!</h1>
     </header>
-    <div class="footer-wrapper">
-      <h2>Which is made with</h2>
-      <div>
-        <img v-bind:src="require('@/assets/vue.png')" alt="" />
-        <img v-bind:src="require('@/assets/vuex.png')" alt="" />
-        <img v-bind:src="require('@/assets/html.png')" alt="" />
-        <img v-bind:src="require('@/assets/css.png')" alt="" />
-        <img v-bind:src="require('@/assets/javascript.png')" alt="" />
-        <img v-bind:src="require('@/assets/spotify.png')" alt="" />
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-wrapper-content">
+          <h2>This site is made with</h2>
+          <div>
+            <img v-bind:src="require('@/assets/vue.png')" alt="" />
+            <img v-bind:src="require('@/assets/vuex.png')" alt="" />
+            <img v-bind:src="require('@/assets/html.png')" alt="" />
+            <img v-bind:src="require('@/assets/css.png')" alt="" />
+            <img v-bind:src="require('@/assets/javascript.png')" alt="" />
+            <img v-bind:src="require('@/assets/spotify.png')" alt="" />
+          </div>
+        </div>
+        <div class="footer-wrapper-content">
+          <h2>This site is made by</h2>
+          <p>Elma Harmsen</p>
+        </div>
       </div>
-      <div>
-        <p></p>
+      <div class="footer-bottom">
+        <p>formidablemusicstore.netlify.com | 2020</p>
       </div>
-    </div>
+    </footer>
   </section>
 </template>
 
@@ -29,12 +37,16 @@ export default {
 
 <style lang="scss" scoped>
 section {
-  background: #022d36;
+  margin-top: 150px;
   width: 100%;
   height: 100vh;
   border-top: 5px solid $merlit-purple-color;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: center;
+  align-self: center;
+
+  background: linear-gradient(#022d36, #000);
 
   header {
     width: 75%;
@@ -47,8 +59,15 @@ section {
       text-shadow: #fff 1px 0 10px;
       position: relative;
       z-index: 2;
-      animation: thankYouAnimation 0.3s linear infinite;
+      animation: thankYouAnimation 5s linear infinite;
     }
+  }
+
+  footer {
+    height: 50vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
   }
 
   .footer-wrapper {
@@ -56,18 +75,36 @@ section {
     margin-left: 50%;
     transform: translateX(-50%);
     display: flex;
-    flex-flow: column;
-  }
-
-  div {
-    text-align: left;
-    display: flex;
     flex-flow: row nowrap;
-
-    img {
-      width: 120px;
+    justify-content: space-between;
+  }
+  h2 {
+    color: $white-color;
+    font-size: 35px;
+  }
+  .footer-bottom {
+    p {
+      font-size: 15px;
+      color: $white-color;
     }
   }
+  .footer-wrapper-content {
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+
+    img {
+      width: 100px;
+    }
+
+    p {
+      color: $white-color;
+      font-size: 25px;
+    }
+  }
+}
+section > * {
+  padding: 30px 0px;
 }
 
 @keyframes thankYouAnimation {

@@ -18,7 +18,7 @@ export default new VueRouter({
       props: true
     },
     {
-      path: "/spotifyproduct/:type/:name",
+      path: "/spotifyproduct/:spotifytype/:spotifyid",
       name: "spotifyproduct",
       component: () => import("@/SpotifyProduct"),
       props: true

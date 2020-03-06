@@ -3,7 +3,7 @@
     <NavbarBackground />
 
     <div class="pageTitle">
-      <h1>This is...</h1>
+      <h1>{{ productData.title }}</h1>
       <div
         data-trigger
         class="pageTitleBubble"
