@@ -27,6 +27,8 @@
     ></PageIndicator>
 
     <ReceiverHome> </ReceiverHome>
+
+    <Footer />
   </div>
 </template>
 
@@ -36,6 +38,7 @@ import NavBar from "./components/NavBar.vue";
 import MusicItem from "./components/MusicItem.vue";
 import PageIndicator from "./components/PageIndicator.vue";
 import ReceiverHome from "./components/ReceiverHome.vue";
+import Footer from "./components/Footer.vue";
 
 import ScrollTrigger from "@terwanerik/scrolltrigger";
 
@@ -76,21 +79,21 @@ export default {
       if (this.musicItems[1].type === "artist") {
         return "These are some of the best Artists";
       }
-      if (this.musicItems[2].type === "lp") {
-        return "You are currently looking at our top LP's";
+      if (this.musicItems[2].type === "single") {
+        return "You are currently looking at our top Singles";
       }
       return pageTitle;
     },
     pageTitlesBubble: function() {
       let pageTitleBubble = "";
       if (this.musicItems[0].type === "album") {
-        return "CD's";
+        return "Cd's";
       }
       if (this.musicItems[1].type === "artist") {
         return "Artists";
       }
-      if (this.musicItems[2].type === "lp") {
-        return "LP's";
+      if (this.musicItems[2].type === "single") {
+        return "Singles";
       }
       return pageTitleBubble;
     }
@@ -100,7 +103,8 @@ export default {
     NavBar,
     MusicItem,
     PageIndicator,
-    ReceiverHome
+    ReceiverHome,
+    Footer
   },
   created: function() {
     setInterval(() => {

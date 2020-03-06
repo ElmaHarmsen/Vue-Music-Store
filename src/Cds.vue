@@ -45,7 +45,7 @@ export default {
           {
             headers: {
               Authorization:
-                "Bearer BQA_Ao71SunZ7KNo4yk3QcEAnXazdL1H6ExQfBIyFU9fOwAeN7d3M_jiscrzOyMKqL3p4ASqOIAHOSb-Glo"
+                "Bearer BQB-YQW_niHs6VsvjTaVdTX10wzUMAbwXNLF5GAPY0m9U7KqSxHWYI_sblFJ9jg8gN9XQW4zHETE6-G41zA"
             }
           }
         );
@@ -69,23 +69,6 @@ section {
     margin: auto auto;
     width: 75%;
     flex-basis: 25%;
-
-    .cd-item {
-      background: linear-gradient(
-        135deg,
-        $merlit-purple-color,
-        $merlit-purple-color 60%,
-        $bicycle-orange-color
-      );
-      padding: 20px;
-      display: flex;
-      flex-flow: column;
-      border-radius: 10px;
-      box-shadow: 0 8px 6px -6px $throbbing-dark-color;
-      margin: 50px 0px 50px 0px;
-      height: 450px;
-      justify-content: space-between;
-    }
   }
 }
 </style>

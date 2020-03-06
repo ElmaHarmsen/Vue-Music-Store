@@ -24,9 +24,10 @@ export default new VueRouter({
       props: true
     },
     {
-      path: "/artist",
-      name: "artist",
-      component: () => import("@/Artist")
+      path: "/spotifyartist/:type/:name",
+      name: "spotifyartist",
+      component: () => import("@/SpotifyProduct"),
+      props: true
     },
     {
       path: "/cds",
@@ -39,8 +40,8 @@ export default new VueRouter({
       component: () => import("@/Artists")
     },
     {
-      path: "/lps",
-      name: "lps",
+      path: "/singles",
+      name: "singles",
       component: () => import("@/Lps")
     },
     {

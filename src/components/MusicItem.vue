@@ -28,22 +28,13 @@
         </ul>
       </div>
 
-      <div v-if="single.type === 'lp'">
+      <div v-if="single.type === 'single'">
         <p>{{ single.title }}</p>
         <ul>
           <li>{{ single.artist }}</li>
-          <li>Label: {{ single.label }}</li>
-          <li>LP Records: {{ single.LPrecords }}</li>
-          <li>{{ albumLength }}</li>
+          <li>{{ single.album }}</li>
+          <li>Duration: {{ single.duration }}</li>
         </ul>
-        <p v-if="single.inventory > 3">{{ single.price }}</p>
-        <p
-          v-else-if="single.inventory < 3 && single.inventory > 0"
-          class="stock"
-        >
-          Almost sold out!
-        </p>
-        <p v-else class="stock">Out of Stock</p>
       </div>
     </section>
   </router-link>

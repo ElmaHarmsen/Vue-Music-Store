@@ -30,7 +30,7 @@ export default {
         },
         {
           id: 1,
-          content: "CD's",
+          content: "Cd's",
           path: "/cds"
         },
         {
@@ -40,8 +40,8 @@ export default {
         },
         {
           id: 3,
-          content: "LP's",
-          path: "/lps"
+          content: "Singles",
+          path: "/singles"
         },
         {
           id: 4,
