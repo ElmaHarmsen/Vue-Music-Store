@@ -7,3 +7,10 @@ export default {
   name: "App"
 };
 </script>
+
+<style lang="scss">
+body {
+  margin: 0px;
+  padding: 0px;
+}
+</style>

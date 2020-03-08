@@ -2,18 +2,33 @@
   <section>
     <NavbarBackground />
 
-    <div class="headers">
-      <h1>{{ spAlbumData.name }}</h1>
+    <div v-if="loading" class="loading-wrapper">
+      <img v-bind:src="require('@/assets/spinner.gif')" alt="" class="loader" />
     </div>
-    <div class="product-info"></div>
-    <footer>
-      <img v-bind:src="spAlbumData.images[0].url" alt="" />
-      <img v-bind:src="spAlbumData.images[0].url" alt="" class="mirror" />
-      <!-- <ul>
-        <li>{{ spAlbumData.tracks.items[0].name }}</li>
-        <li>{{ spAlbumData.tracks.items[1].name }}</li>    
-      </ul> -->
-    </footer>
+
+    <div v-else>
+      <div class="headers">
+        <h1>{{ spAlbumData.name }}</h1>
+      </div>
+      <div class="product-info"></div>
+
+      <footer>
+        <img v-bind:src="spAlbumData.images[0].url" alt="" />
+        <img v-bind:src="spAlbumData.images[0].url" alt="" class="mirror" />
+        <div class="headers">
+          <h1>These are the tracks</h1>
+        </div>
+        <ul
+          v-bind:style="{
+            flexWrap: spAlbumData.tracks.total > 12 ? 'wrap' : 'no-wrap'
+          }"
+        >
+          <li v-for="track in spAlbumData.tracks.items" v-bind:key="track.id">
+            {{ track.track_number }}. {{ track.name }}
+          </li>
+        </ul>
+      </footer>
+    </div>
   </section>
 </template>
 
@@ -26,11 +41,13 @@ export default {
   },
   data: function() {
     return {
-      spAlbumData: []
+      loading: true,
+      spAlbumData: {}
     };
   },
-  created: function() {
-    this.fetchData();
+  created: async function() {
+    await this.fetchData();
+    this.loading = false;
   },
   watch: {
     $route: "fetchData"
@@ -42,7 +59,7 @@ export default {
         {
           headers: {
             Authorization:
-              "Bearer BQA3sRm96vek8py04Ap8SxX4ggbCWjVJIKkbZTtdabTAocR7BGp-yE3WzUHdRBq-enSYEyYBncyZhVaMuy8"
+              "Bearer BQClnXzh8r4mDJo55xEFcQEuvfcNQssTdT4kGvBzHDD6z_9wRt2dKCMcgVUNQaDkOhp5IJbRLjXwltkEH0M"
           }
         }
       );
@@ -57,6 +74,18 @@ import NavbarBackground from "./components/NavbarBackground.vue";
 section {
   padding-top: 100px;
 
+  .loading-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loader {
+      width: 50px;
+      margin-top: 50px;
+    }
+  }
+
   footer {
     margin-top: 150px;
     width: 100%;
@@ -67,13 +96,39 @@ section {
     justify-content: center;
 
     img {
-      position: relative;
+      position: absolute;
+      z-index: -1;
       height: 100vh;
-      width: 49.3vw;
+      width: 50%;
       opacity: 0.1;
+
+      &:first-of-type {
+        left: 0;
+      }
+      &:last-of-type {
+        right: 0;
+      }
     }
     .mirror {
       transform: scaleX(-1);
+    }
+    .headers {
+      position: absolute;
+    }
+    ul {
+      margin-top: 250px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      height: 600px;
+
+      li {
+        color: $throbbing-dark-color;
+        font-size: 20px;
+        height: 50px;
+        padding: 0px 50px;
+        font-weight: bold;
+      }
     }
   }
 }
