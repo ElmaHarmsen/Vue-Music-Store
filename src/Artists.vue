@@ -30,6 +30,9 @@ export default {
       artistJsonData: []
     };
   },
+  computed: {
+    ...mapGetters(["getToken"])
+  },
   created: function() {
     this.fetchData();
   },
@@ -44,8 +47,7 @@ export default {
           "https://api.spotify.com/v1/artists/" + spArtistcode,
           {
             headers: {
-              Authorization:
-                "Bearer BQClnXzh8r4mDJo55xEFcQEuvfcNQssTdT4kGvBzHDD6z_9wRt2dKCMcgVUNQaDkOhp5IJbRLjXwltkEH0M"
+              Authorization: `Bearer ${this.getToken}`
             }
           }
         );
@@ -56,6 +58,7 @@ export default {
 };
 import NavbarBackground from "./components/NavbarBackground.vue";
 import SpotifyArtistItem from "./components/SpotifyArtistItem.vue";
+import { mapGetters } from "vuex"; //read about it!
 </script>
 
 <style lang="scss" scoped>

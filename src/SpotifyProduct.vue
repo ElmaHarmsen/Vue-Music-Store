@@ -49,6 +49,9 @@ export default {
     await this.fetchData();
     this.loading = false;
   },
+  computed: {
+    ...mapGetters(["getToken"])
+  },
   watch: {
     $route: "fetchData"
   },
@@ -58,8 +61,7 @@ export default {
         "https://api.spotify.com/v1/albums/" + this.spotifyid,
         {
           headers: {
-            Authorization:
-              "Bearer BQClnXzh8r4mDJo55xEFcQEuvfcNQssTdT4kGvBzHDD6z_9wRt2dKCMcgVUNQaDkOhp5IJbRLjXwltkEH0M"
+            Authorization: `Bearer ${this.getToken}`
           }
         }
       );
@@ -68,6 +70,7 @@ export default {
   }
 };
 import NavbarBackground from "./components/NavbarBackground.vue";
+import { mapGetters } from "vuex"; //read about it!
 </script>
 
 <style lang="scss" scoped>

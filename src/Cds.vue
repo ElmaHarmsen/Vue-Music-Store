@@ -33,6 +33,9 @@ export default {
   created: function() {
     this.fetchData();
   },
+  computed: {
+    ...mapGetters(["getToken"])
+  },
   watch: {
     $route: "fetchData"
   },
@@ -44,8 +47,7 @@ export default {
           "https://api.spotify.com/v1/albums/" + spAlbumcode,
           {
             headers: {
-              Authorization:
-                "Bearer BQClnXzh8r4mDJo55xEFcQEuvfcNQssTdT4kGvBzHDD6z_9wRt2dKCMcgVUNQaDkOhp5IJbRLjXwltkEH0M"
+              Authorization: `Bearer ${this.getToken}`
             }
           }
         );
@@ -56,6 +58,7 @@ export default {
 };
 import NavbarBackground from "./components/NavbarBackground.vue";
 import SpotifyMusicItem from "./components/SpotifyMusicItem.vue";
+import { mapGetters } from "vuex"; //read about it!
 </script>
 
 <style lang="scss" scoped>
