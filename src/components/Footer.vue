@@ -7,7 +7,7 @@
     <footer>
       <div class="footer-wrapper">
         <div class="footer-wrapper-content">
-          <h2>This site is made with</h2>
+          <h2>This site is made with the help of</h2>
           <div>
             <img v-bind:src="require('@/assets/vue.png')" alt="" />
             <img v-bind:src="require('@/assets/vuex.png')" alt="" />
@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="footer-wrapper-content">
-          <h2>This site is made by</h2>
+          <h2>This site is made by the creativity of</h2>
           <p>Elma Harmsen</p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <router-link
-    v-bind:to="`/spotifyartist/${spotifydata.type}/${spotifydata.name}`"
+    v-bind:to="`/spotifyartist/${spotifydata.type}/${spotifydata.id}`"
     class="router-link"
   >
     <section>

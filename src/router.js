@@ -24,9 +24,9 @@ export default new VueRouter({
       props: true
     },
     {
-      path: "/spotifyartist/:type/:name",
+      path: "/spotifyartist/:spotifytype/:spotifyid",
       name: "spotifyartist",
-      component: () => import("@/SpotifyProduct"),
+      component: () => import("@/SpotifyArtist"),
       props: true
     },
     {
@@ -38,11 +38,6 @@ export default new VueRouter({
       path: "/artists",
       name: "artists",
       component: () => import("@/Artists")
-    },
-    {
-      path: "/singles",
-      name: "singles",
-      component: () => import("@/Lps")
     },
     {
       path: "/shoppingcart",

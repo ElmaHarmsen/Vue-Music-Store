@@ -64,10 +64,6 @@ export default {
         case 2:
           musicItemData = this.jsonData[1];
           break;
-
-        case 3:
-          musicItemData = this.jsonData[2];
-          break;
       }
       return musicItemData;
     },
@@ -79,9 +75,6 @@ export default {
       if (this.musicItems[1].type === "artist") {
         return "These are some of the best Artists";
       }
-      if (this.musicItems[2].type === "single") {
-        return "You are currently looking at our top Singles";
-      }
       return pageTitle;
     },
     pageTitlesBubble: function() {
@@ -91,9 +84,6 @@ export default {
       }
       if (this.musicItems[1].type === "artist") {
         return "Artists";
-      }
-      if (this.musicItems[2].type === "single") {
-        return "Singles";
       }
       return pageTitleBubble;
     }

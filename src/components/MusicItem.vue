@@ -27,15 +27,6 @@
           <li v-html="popularSongs"></li>
         </ul>
       </div>
-
-      <div v-if="single.type === 'single'">
-        <p>{{ single.title }}</p>
-        <ul>
-          <li>{{ single.artist }}</li>
-          <li>{{ single.album }}</li>
-          <li>Duration: {{ single.duration }}</li>
-        </ul>
-      </div>
     </section>
   </router-link>
 </template>

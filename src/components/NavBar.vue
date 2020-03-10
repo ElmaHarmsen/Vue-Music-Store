@@ -39,11 +39,6 @@ export default {
           path: "/artists"
         },
         {
-          id: 3,
-          content: "Singles",
-          path: "/singles"
-        },
-        {
           id: 4,
           icon: "shopping_cart",
           path: "/shoppingcart"
