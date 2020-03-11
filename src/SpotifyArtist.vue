@@ -12,7 +12,9 @@
           <h1>{{ spArtistData.name }}</h1>
         </div>
         <div class="followers">
-          <h1 id="counter">{{ spArtistData.followers.total }}</h1>
+          <h1 class="number-of-followers">
+            {{ spArtistData.followers.total }}
+          </h1>
           <h1>Spotify Followers</h1>
         </div>
       </div>
@@ -41,22 +43,6 @@ export default {
   created: async function() {
     await this.fetchData();
     this.loading = false;
-
-    // let start = null;
-    // let element = document.getElementById("counter");
-    // function count(time) {
-    //   if (!start) {
-    //     start = time;
-    //   }
-    //   var progress = time - start;
-    //   element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
-    //   if (progress < 2000) {
-    //      window.requestAnimationFrame();
-    //   }
-    // }
-    // window.requestAnimationFrame();
-    // let result = parseInt(element.textContent, 10);
-    // let duration = 5000;
   },
   computed: {
     ...mapGetters(["getToken"]),
@@ -111,11 +97,18 @@ section {
         h1 {
           color: $white-color;
           text-shadow: #9a151a 1px 0 10px;
-
-          &:first-of-type {
-            color: #fc4b2a;
-            text-shadow: #fc4b2a 1px 0 10px;
-          }
+        }
+        .number-of-followers {
+          width: 25%;
+          margin: 50px auto;
+          color: #fc4b2a;
+          text-shadow: #fc4b2a 1px 0 10px;
+          animation: bouncey 1s forwards ease-in-out;
+          animation-delay: 0.2s;
+        }
+        .number-of-followers:hover {
+          animation: hovery 1s 1 ease-in-out;
+          animation-delay: 0.2s;
         }
       }
     }
@@ -149,6 +142,46 @@ section {
         z-index: 0;
       }
     }
+  }
+}
+@keyframes bouncey {
+  0% {
+    transform: scale(0);
+  }
+  15% {
+    transform: scale(1.75);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.25);
+  }
+  60% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes hovery {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 </style>
