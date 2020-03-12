@@ -1,9 +1,10 @@
 <template>
   <section>
     <header>
-      <h1>Formidable</h1>
-      <h1>Music Store</h1>
-      <!-- <img v-bind:src="require('@/assets/CD.jpg')" alt=""> -->
+      <h1>
+        Formidable <br />
+        Music Store
+      </h1>
     </header>
     <span
       class="starry"
@@ -53,7 +54,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 section {
-  //background: radial-gradient(closest-side, #756c1b, #0e99b5, #022d36);
   background: linear-gradient(#0e99b5, #022d36);
   border-bottom: 5px solid $merlit-purple-color;
   height: 100vh;
@@ -63,7 +63,7 @@ section {
 
   header {
     h1 {
-      font-size: 200px;
+      font-size: 60px;
       margin: 0;
       color: $bicycle-orange-color;
       text-shadow: #fff 1px 0 10px;
@@ -74,7 +74,7 @@ section {
   .material-icons {
     color: $bicycle-orange-color;
     text-shadow: #fff 1px 0 10px;
-    font-size: 100px;
+    font-size: 60px;
     position: absolute;
     z-index: 2;
     bottom: 10vh;
@@ -84,16 +84,29 @@ section {
     animation-duration: 1s;
     animation-iteration-count: infinite;
   }
-  @keyframes arrowAnimation {
-    0% {
-      bottom: 10vh;
+}
+
+@media screen and(min-width: 700px) {
+  section {
+    header {
+      h1 {
+        font-size: 200px;
+      }
     }
-    50% {
-      bottom: 5vh;
+    .material-icons {
+      font-size: 100px;
     }
-    100% {
-      bottom: 10vh;
-    }
+  }
+}
+@keyframes arrowAnimation {
+  0% {
+    bottom: 10vh;
+  }
+  50% {
+    bottom: 5vh;
+  }
+  100% {
+    bottom: 10vh;
   }
 }
 </style>

@@ -1,35 +1,47 @@
 <template>
-  <div id="home">
-    <NavBar />
-
-    <HelloWorld />
-
-    <div class="pageTitle">
-      <h1>{{ pageTitles }}</h1>
-      <div data-trigger class="pageTitleBubble">
-        <h2>{{ pageTitlesBubble }}</h2>
-      </div>
-
-      <div class="music-item-wrapper">
-        <MusicItem
-          v-for="listitem in musicItems"
-          v-bind:key="listitem.id"
-          v-bind:single="listitem"
-        ></MusicItem>
+  <section>
+    <div id="mobile_home">
+      <h1>In Progress</h1>
+      <div>
+        <p>
+          The mobile version of the Formidable Music Store is being made, and
+          will soon be online.
+        </p>
+        <p>Please visit this website on a laptop.</p>
       </div>
     </div>
+    <div id="home">
+      <NavBar />
 
-    <PageIndicator
-      v-bind:homePageNumbers="homePageNumber"
-      v-bind:totalPages="jsonData.length"
-      v-on:increasePage="homePageNumber += $event"
-      v-on:decreasePage="homePageNumber -= $event"
-    ></PageIndicator>
+      <HelloWorld />
 
-    <ReceiverHome> </ReceiverHome>
+      <div class="pageTitle">
+        <h1>{{ pageTitles }}</h1>
+        <div data-trigger class="pageTitleBubble">
+          <h2>{{ pageTitlesBubble }}</h2>
+        </div>
 
-    <Footer />
-  </div>
+        <div class="music-item-wrapper">
+          <MusicItem
+            v-for="listitem in musicItems"
+            v-bind:key="listitem.id"
+            v-bind:single="listitem"
+          ></MusicItem>
+        </div>
+      </div>
+
+      <PageIndicator
+        v-bind:homePageNumbers="homePageNumber"
+        v-bind:totalPages="jsonData.length"
+        v-on:increasePage="homePageNumber += $event"
+        v-on:decreasePage="homePageNumber -= $event"
+      ></PageIndicator>
+
+      <ReceiverHome> </ReceiverHome>
+
+      <Footer />
+    </div>
+  </section>
 </template>
 
 <script>
@@ -118,40 +130,70 @@ export default {
 </script>
 
 <style lang="scss">
-#home {
-  text-align: center;
-  display: flex;
-  flex-flow: column nowrap;
-}
-.pageTitle {
-  h1 {
-    color: $white-color;
-    text-shadow: #9a151a 1px 0 10px;
-    margin: 100px 0px 50px 0px;
-  }
-  .pageTitleBubble {
-    border: 5px solid $white-color;
-    border-radius: 50%;
-    box-shadow: inset 0px 0px 10px #9a151a, 0px 0px 10px #9a151a;
-    width: 120px;
-    height: 120px;
-    position: sticky;
-    top: 30%;
-    left: calc(100% - 150px);
-    margin-top: -150px;
-
-    h2 {
-      color: $merlit-purple-color;
-      font-size: 40px;
-    }
-  }
-  .music-item-wrapper {
+section {
+  #mobile_home {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    margin: auto auto;
-    width: 75%;
-    flex-basis: 25%;
+    justify-content: center;
+
+    h1 {
+      color: $white-color;
+      text-shadow: #9a151a 1px 0 10px;
+      font-size: 55px;
+    }
+    div {
+      text-align: left;
+      margin: 50px 25px;
+      p {
+        padding: 5px 0px;
+      }
+    }
+  }
+  #home {
+    display: none;
+  }
+}
+@media screen and(min-width: 700px) {
+  section {
+    #mobile_home {
+      display: none;
+    }
+    #home {
+      text-align: center;
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    .pageTitle {
+      h1 {
+        color: $white-color;
+        text-shadow: #9a151a 1px 0 10px;
+        margin: 100px 0px 50px 0px;
+      }
+      .pageTitleBubble {
+        border: 5px solid $white-color;
+        border-radius: 50%;
+        box-shadow: inset 0px 0px 10px #9a151a, 0px 0px 10px #9a151a;
+        width: 120px;
+        height: 120px;
+        position: sticky;
+        top: 30%;
+        left: calc(100% - 150px);
+        margin-top: -150px;
+
+        h2 {
+          color: $merlit-purple-color;
+          font-size: 40px;
+        }
+      }
+      .music-item-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin: auto auto;
+        width: 75%;
+        flex-basis: 25%;
+      }
+    }
   }
 }
 </style>

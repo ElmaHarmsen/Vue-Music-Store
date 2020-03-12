@@ -50,43 +50,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-  position: absolute;
-  top: 0px;
-  text-align: center;
-  z-index: 3;
-  width: 75%;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-
-  .consistent-item-wrapper {
+@media screen and(min-width: 700px) {
+  section {
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    z-index: 3;
+    width: 75%;
+    margin-left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
-    margin: auto auto;
-    z-index: 2;
-  }
+    justify-content: space-between;
 
-  h2 {
-    color: $white-color;
-    font-size: 25px;
-    margin: 0px;
-    padding: 0px 15px;
-    align-self: center;
-  }
+    .consistent-item-wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      margin: auto auto;
+      z-index: 2;
+    }
 
-  div {
-    display: flex;
-    flex-flow: row nowrap;
-    align-self: center;
-
-    p {
+    h2 {
       color: $white-color;
-      font-weight: bold;
+      font-size: 25px;
+      margin: 0px;
       padding: 0px 15px;
+      align-self: center;
+    }
+
+    div {
+      display: flex;
+      flex-flow: row nowrap;
+      align-self: center;
+
+      p {
+        color: $white-color;
+        font-weight: bold;
+        padding: 0px 15px;
+      }
     }
   }
 }

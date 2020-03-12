@@ -19,41 +19,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.consistent-button-border {
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 10px #fff, 0px 0px 10px #fff;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  animation-name: changeColorButton;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  margin: 25px 25px 0px 25px;
-  color: $white-color;
-
-  .material-icons {
+@media screen and(min-width: 700px) {
+  .consistent-button-border {
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px #fff, 0px 0px 10px #fff;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    animation-name: changeColorButton;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    margin: 25px 25px 0px 25px;
     color: $white-color;
-    font-size: 40px;
-  }
 
-  p {
-    margin: 0;
-    font-family: "dancing-script";
-    font-size: 30px;
-    font-weight: bold;
-  }
+    .material-icons {
+      color: $white-color;
+      font-size: 40px;
+    }
 
-  @keyframes changeColorButton {
-    0% {
-      border: 5px solid $defenders-red-color;
+    p {
+      margin: 0;
+      font-family: "dancing-script";
+      font-size: 30px;
+      font-weight: bold;
     }
-    50% {
-      border: 5px solid $bicycle-orange-color;
-    }
-    100% {
-      border: 5px solid $defenders-red-color;
+
+    @keyframes changeColorButton {
+      0% {
+        border: 5px solid $defenders-red-color;
+      }
+      50% {
+        border: 5px solid $bicycle-orange-color;
+      }
+      100% {
+        border: 5px solid $defenders-red-color;
+      }
     }
   }
 }

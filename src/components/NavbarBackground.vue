@@ -47,13 +47,15 @@ import NavBar from "@/components/NavBar.vue";
 </script>
 
 <style lang="scss" scoped>
-header {
-  background: linear-gradient(#0e99b5, #022d36);
-  border-bottom: 5px solid $merlit-purple-color;
-  height: 20vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+@media screen and(min-width: 700px) {
+  header {
+    background: linear-gradient(#0e99b5, #022d36);
+    border-bottom: 5px solid $merlit-purple-color;
+    height: 20vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }
 </style>
