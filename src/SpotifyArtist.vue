@@ -15,7 +15,7 @@
           <h1 class="number-of-followers">
             {{ spArtistData.followers.total }}
           </h1>
-          <h1>Spotify Followers</h1>
+          <h2>Spotify Followers</h2>
         </div>
       </div>
       <footer>
@@ -110,6 +110,9 @@ section {
           animation: hovery 1s 1 ease-in-out;
           animation-delay: 0.2s;
         }
+        h2 {
+          font-size: 30px;
+        }
       }
     }
   }
@@ -142,46 +145,6 @@ section {
         z-index: 0;
       }
     }
-  }
-}
-@keyframes bouncey {
-  0% {
-    transform: scale(0);
-  }
-  15% {
-    transform: scale(1.75);
-  }
-  30% {
-    transform: scale(1);
-  }
-  45% {
-    transform: scale(1.25);
-  }
-  60% {
-    transform: scale(1);
-  }
-  75% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes hovery {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.5);
-  }
-  50% {
-    transform: scale(1);
-  }
-  75% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
   }
 }
 </style>

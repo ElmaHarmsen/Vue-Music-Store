@@ -43,14 +43,10 @@
     </div>
 
     <div class="cart">
-      <div
-        data-trigger
-        class="pageTitleBubble"
-        v-if="productData.inventory === 0"
-      >
+      <div class="pageTitleBubble" v-if="productData.inventory === 0">
         <h2 class="notToCartContent"></h2>
       </div>
-      <div v-else data-trigger class="pageTitleBubble">
+      <div v-else class="pageTitleBubble">
         <h2 class="toCartContent"></h2>
       </div>
     </div>
@@ -107,44 +103,6 @@ section {
       margin: 100px 0px 50px 0px;
     }
   }
-  .cart {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin: 50px 0px;
-    .pageTitleBubble {
-      border: 5px solid $white-color;
-      border-radius: 50%;
-      box-shadow: inset 0px 0px 10px #9a151a, 0px 0px 10px #9a151a;
-      width: 120px;
-      height: 120px;
-
-      h2 {
-        color: $merlit-purple-color;
-        font-size: 40px;
-      }
-      .notToCartContent {
-        min-height: 60px;
-        text-align: center;
-        &:after {
-          animation: noAddToCart 2s linear infinite alternate;
-          content: "";
-          font-size: 40px;
-          color: $grey-color;
-        }
-      }
-      .toCartContent {
-        min-height: 60px;
-        text-align: center;
-        &:after {
-          animation: addToCart 2s linear infinite alternate;
-          content: "";
-          font-size: 40px;
-          color: $merlit-purple-color;
-        }
-      }
-    }
-  }
   .info-properties {
     background: linear-gradient(
       135deg,
@@ -189,29 +147,6 @@ section {
         color: $white-color;
       }
     }
-  }
-}
-@keyframes noAddToCart {
-  0% {
-    content: "Please";
-  }
-  50% {
-    color: #fff;
-  }
-  100% {
-    content: "Wait";
-  }
-}
-
-@keyframes addToCart {
-  0% {
-    content: "In";
-  }
-  50% {
-    color: #fff;
-  }
-  100% {
-    content: "Cart";
   }
 }
 </style>

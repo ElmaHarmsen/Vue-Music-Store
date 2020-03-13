@@ -7,25 +7,26 @@
     </div>
 
     <div v-else>
-      <div class="headers">
-        <h1>{{ spAlbumData.name }}</h1>
-      </div>
-      <div class="info-properties">
-        <div class="left"></div>
-        <div class="right">
-          <h2>{{ spAlbumData.name }}</h2>
-          <ul>
-            <li>By {{ spAlbumData.artists[0].name }}</li>
-            <li>{{ spAlbumData.label }}</li>
-            <li>Released at {{ spAlbumData.release_date }}</li>
-          </ul>
-          <h2>€price,-</h2>
+      <div class="album-info">
+        <div class="headers">
+          <h1>{{ spAlbumData.name }}</h1>
+        </div>
+        <div class="info">
+          <h1 class="artist">{{ spAlbumData.artists[0].name }}</h1>
+          <h2>{{ spAlbumData.label }} | {{ spAlbumData.release_date }}</h2>
+        </div>
+
+        <div class="cart">
+          <div class="pageTitleBubble">
+            <h2 class="toCartContent"></h2>
+          </div>
         </div>
       </div>
 
       <footer>
         <img v-bind:src="spAlbumData.images[0].url" alt="" />
-        <img v-bind:src="spAlbumData.images[0].url" alt="" class="mirror" />
+        <img v-bind:src="spAlbumData.images[0].url" alt="" class="blur" />
+        <img v-bind:src="spAlbumData.images[0].url" alt="" />
         <div class="headers">
           <h1>These are the tracks</h1>
         </div>
@@ -88,49 +89,30 @@ import { mapGetters } from "vuex"; //read about it!
 section {
   padding-top: 100px;
 
-  .info-properties {
-    background: linear-gradient(
-      135deg,
-      $merlit-purple-color,
-      $merlit-purple-color 60%,
-      $bicycle-orange-color
-    );
-    border-radius: 10px;
-    box-shadow: 0 8px 6px -6px $throbbing-dark-color;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    width: 75%;
-    margin: auto auto;
+  .album-info {
     height: 80vh;
-    margin-top: 50px;
+    text-align: center;
 
-    .left {
-      align-self: center;
-    }
-    .right {
-      align-self: center;
-      text-align: right;
-      padding-right: 150px;
-
-      ul {
-        list-style: none;
-
-        li {
-          font-size: 30px;
-          color: $white-color;
-        }
+    .info {
+      .artist {
+        width: 50%;
+        margin: 50px auto;
+        color: #fc4b2a;
+        text-shadow: #fc4b2a 1px 0 10px;
+        animation: bouncey 1s forwards ease-in-out;
+        animation-delay: 0.2s;
       }
-
+      .artist:hover {
+        animation: hovery 1s 1 ease-in-out;
+        animation-delay: 0.2s;
+      }
       h2 {
-        font-size: 40px;
-        color: $white-color;
+        font-size: 30px;
       }
     }
   }
 
   footer {
-    margin-top: 150px;
     width: 100%;
     height: 100vh;
     border-top: 5px solid $merlit-purple-color;
@@ -140,24 +122,19 @@ section {
 
     img {
       position: absolute;
-      z-index: -1;
+      z-index: 1;
       height: 100vh;
-      width: 50%;
-
-      &:first-of-type {
-        left: 0;
-        opacity: 0.3;
-      }
-      &:last-of-type {
-        right: 0;
-        filter: blur(7px);
-        opacity: 0.3;
-      }
+      width: auto;
+      filter: blur(6px);
+      opacity: 0.3;
     }
     .headers {
       position: absolute;
+      z-index: 2;
     }
     ul {
+      position: absolute;
+      z-index: 2;
       margin-top: 250px;
       list-style: none;
       display: flex;
