@@ -66,3 +66,14 @@ ul {
   .visible {
     opacity: 1;
   }
+  .loading-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loader {
+      width: 50px;
+      margin-top: 50px;
+    }
+  }

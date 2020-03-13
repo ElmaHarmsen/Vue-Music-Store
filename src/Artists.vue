@@ -2,17 +2,23 @@
   <section>
     <NavbarBackground />
 
-    <div class="headers">
-      <h1>Discover Artists</h1>
+    <div v-if="loading" class="loading-wrapper">
+      <img v-bind:src="require('@/assets/spinner.gif')" alt="" class="loader" />
     </div>
 
-    <div class="artists-wrapper">
-      <SpotifyArtistItem
-        v-for="artistItem in artistJsonData"
-        v-bind:key="artistItem.id"
-        v-bind:spotifydata="artistItem"
-      >
-      </SpotifyArtistItem>
+    <div v-else>
+      <div class="headers">
+        <h1>Discover Artists</h1>
+      </div>
+
+      <div class="artists-wrapper">
+        <SpotifyArtistItem
+          v-for="artistItem in artistJsonData"
+          v-bind:key="artistItem.id"
+          v-bind:spotifydata="artistItem"
+        >
+        </SpotifyArtistItem>
+      </div>
     </div>
   </section>
 </template>
@@ -27,14 +33,16 @@ export default {
   },
   data: function() {
     return {
+      loading: true,
       artistJsonData: []
     };
   },
   computed: {
     ...mapGetters(["getToken"])
   },
-  created: function() {
-    this.fetchData();
+  created: async function() {
+    await this.fetchData();
+    this.loading = false;
   },
   watch: {
     $route: "fetchData"
@@ -65,13 +73,15 @@ import { mapGetters } from "vuex"; //read about it!
 section {
   padding-top: 100px;
 
-  .artists-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin: auto auto;
-    width: 75%;
-    flex-basis: 25%;
+  div {
+    .artists-wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin: auto auto;
+      width: 75%;
+      flex-basis: 25%;
+    }
   }
 }
 </style>

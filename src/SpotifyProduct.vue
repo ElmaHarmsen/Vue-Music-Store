@@ -88,18 +88,6 @@ import { mapGetters } from "vuex"; //read about it!
 section {
   padding-top: 100px;
 
-  .loading-wrapper {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .loader {
-      width: 50px;
-      margin-top: 50px;
-    }
-  }
-
   .info-properties {
     background: linear-gradient(
       135deg,
