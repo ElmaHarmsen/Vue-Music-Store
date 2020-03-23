@@ -66,7 +66,7 @@ export default {
 };
 import NavbarBackground from "./components/NavbarBackground.vue";
 import SpotifyArtistItem from "./components/SpotifyArtistItem.vue";
-import { mapGetters } from "vuex"; //read about it!
+import { mapGetters } from "vuex";
 </script>
 
 <style lang="scss" scoped>

@@ -18,8 +18,14 @@ export default {
   components: {
     NavbarBackground
   }
+  // computed: {
+  //   ...mapGetters(["cart/getProducts"])
+  //   //Dives into the path of the correct store, in this case art
+  // }
 };
 import NavbarBackground from "./components/NavbarBackground.vue";
+//import { mapGetters } from "vuex";
+//Mapgetters are another way of receiving the value of a getter
 </script>
 
 <style lang="scss" scoped>
